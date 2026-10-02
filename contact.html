@@ -207,34 +207,39 @@
           </p>
         </div>
 
-        <form class="form" data-demo>
+        <form class="form" action="https://formsubmit.co/theepcengineer@gmail.com" method="POST">
           <h2>Enquiry Form</h2>
+
+          <input type="hidden" name="_subject" value="New enquiry from The EPC Engineer website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
 
           <div class="form-grid">
             <label>
               <span>Full name</span>
-              <input name="name" type="text" required autocomplete="name">
+              <input name="Full name" type="text" required autocomplete="name">
             </label>
 
             <label>
               <span>Work email</span>
-              <input name="email" type="email" required autocomplete="email">
+              <input name="_replyto" type="email" required autocomplete="email">
             </label>
 
             <label>
               <span>Company or institution</span>
-              <input name="company" type="text" autocomplete="organization">
+              <input name="Company or institution" type="text" autocomplete="organization">
             </label>
 
             <label>
               <span>Role or discipline</span>
-              <input name="role" type="text" autocomplete="organization-title">
+              <input name="Role or discipline" type="text" autocomplete="organization-title">
             </label>
           </div>
 
           <label>
             <span>How can I help?</span>
-            <select name="service" required>
+            <select name="Service requested" required>
               <option value="">Select a service</option>
               <option value="technical-consultation">Technical consultation</option>
               <option value="resume-review">Resume review</option>
@@ -247,23 +252,19 @@
           <label>
             <span>Objective and context</span>
             <textarea
-              name="message"
+              name="Objective and context"
               required
               placeholder="Describe the challenge, required outcome and preferred timeline. Do not include confidential information."
             ></textarea>
           </label>
 
           <label>
-            <input type="checkbox" required style="width:auto">
+            <input type="checkbox" name="Privacy consent" value="Agreed" required style="width:auto">
             I agree to the privacy notice and consent to being contacted about this enquiry.
           </label>
 
           <button class="btn btn-primary" type="submit">Send Enquiry</button>
 
-          <div class="success" role="status">
-            This demonstration form has not transmitted any information. Connect the
-            form to Formspree, Netlify Forms or a secure backend before launch.
-          </div>
         </form>
       </div>
     </section>
