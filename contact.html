@@ -1,6 +1,329 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact Gupta Sahu | The EPC Engineer</title><meta name="description" content="Contact Gupta Sahu for rotating equipment consulting, mentoring and resume review."><meta name="keywords" content="Contact Rotating Equipment Consultant"><meta name="author" content="Gupta Sahu"><meta name="theme-color" content="#0D3B66"><meta property="og:type" content="website"><meta property="og:title" content="Contact Gupta Sahu | The EPC Engineer"><meta property="og:description" content="Contact Gupta Sahu for rotating equipment consulting, mentoring and resume review."><meta property="og:image" content="assets/images/logo.svg"><link rel="canonical" href="https://www.theepcengineer.com/contact.html"><link rel="stylesheet" href="assets/css/style.css"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Gupta Sahu","jobTitle":"Rotating Equipment Engineer","url":"https://www.theepcengineer.com","brand":{"@type":"Brand","name":"The EPC Engineer"}}</script></head><body><a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><div class="container nav-wrap">
-<a class="brand" href="index.html" aria-label="The EPC Engineer home"><span class="brand-mark">EPC</span><span><strong>The EPC Engineer</strong><small>LEARN. GROW. SOLVE. SUCCEED.</small></span></a>
-<button class="menu-btn" aria-expanded="false" aria-controls="main-nav">☰<span class="sr-only">Menu</span></button>
-<nav id="main-nav" class="main-nav" aria-label="Primary navigation"><a class="nav-link " href="index.html">Home</a><a class="nav-link " href="about.html">About</a><a class="nav-link " href="services.html">Services</a><a class="nav-link " href="knowledge-hub.html">Knowledge Hub</a><a class="nav-link " href="resources.html">Free Resources</a><a class="nav-link " href="case-studies.html">Case Studies</a><a class="nav-link " href="testimonials.html">Testimonials</a><a class="nav-link active" href="contact.html">Contact</a><a class="btn btn-primary nav-cta" href="booking.html">Book Consultation</a></nav>
-</div></header><main id="main"><section class="page-hero"><div class="container"><p class="eyebrow light">Contact</p><h1>Tell me what you are trying to solve</h1><p class="hero-text">Share the objective, context and desired outcome. Do not send proprietary drawings, client data or controlled information.</p></div></section><section class="section"><div class="container grid grid-2"><div class="content"><h2>Start the conversation</h2><div class="card"><strong>Email</strong><p>theepcengineer@gmail.com</p></div><div class="card"><strong>LinkedIn</strong><p>linkedin.com/in/gupta-sahu</p></div><div class="card"><strong>WhatsApp</strong><p>Add your business number before launch.</p></div><p class="notice">Replace all contact placeholders with verified details.</p></div><form class="form" data-demo><h2>Enquiry Form</h2><div class="form-grid"><label><span>Full name</span><input name="name" required autocomplete="name"></label><label><span>Work email</span><input name="email" type="email" required autocomplete="email"></label><label><span>Company / institution</span><input name="company"></label><label><span>Role / discipline</span><input name="role"></label></div><label><span>How can I help?</span><select name="service"><option>Technical consultation</option><option>Resume review</option><option>Career mentoring</option><option>Training enquiry</option><option>Other</option></select></label><label><span>Objective and context</span><textarea name="message" required placeholder="Do not include confidential data."></textarea></label><label><input type="checkbox" required style="width:auto"> I agree to the privacy notice and consent to being contacted.</label><button class="btn btn-primary" type="submit">Send Enquiry</button><div class="success">Prototype submitted locally. Connect this form to Netlify Forms, Formspree or your secure backend before launch.</div></form></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h2>The EPC Engineer</h2><p>Practical rotating-equipment knowledge, technical consulting and career mentoring for engineers.</p><p class="social"><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a> · <a href="mailto:theepcengineer@gmail.com">Email</a> · <a href="https://wa.me/" rel="noopener">WhatsApp</a></p></div><div><h3>Explore</h3><a href="knowledge-hub.html">Knowledge Hub</a><a href="resources.html">Free Resources</a><a href="case-studies.html">Case Studies</a></div><div><h3>Work with Gupta</h3><a href="booking.html">Book Consultation</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom">© <span id="year"></span> Gupta Sahu. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></div></footer><script src="assets/js/main.js" defer></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Contact Gupta Sahu | The EPC Engineer</title>
+  <meta name="description" content="Contact Gupta Sahu for rotating equipment consulting, engineering mentoring, resume review and technical support.">
+  <meta name="keywords" content="Contact Rotating Equipment Engineer, Rotating Equipment Consulting, Engineering Mentoring, Resume Review for Engineers">
+  <meta name="author" content="Gupta Sahu">
+  <meta name="theme-color" content="#0D3B66">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact Gupta Sahu | The EPC Engineer">
+  <meta property="og:description" content="Discuss rotating equipment consulting, career mentoring, resume review or technical training requirements.">
+  <meta property="og:image" content="assets/images/logo.svg">
+
+  <link rel="canonical" href="https://guptasahu.github.io/contact.html">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .contact-details {
+      display: grid;
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .contact-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: #F4A261;
+    }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #0D3B66;
+      font-size: 1.1rem;
+    }
+
+    .contact-card p {
+      margin: 0;
+    }
+
+    .contact-card a {
+      color: #0D3B66;
+      font-weight: 700;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-card a:hover {
+      color: #CF7029;
+      text-decoration: underline;
+    }
+
+    .contact-card a:focus-visible {
+      outline: 3px solid #F4A261;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .whatsapp-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 11px 16px;
+      border-radius: 10px;
+      background: #25D366;
+      color: #ffffff !important;
+      font-weight: 800;
+      text-decoration: none !important;
+    }
+
+    .whatsapp-button:hover {
+      background: #1EAE54;
+      color: #ffffff !important;
+    }
+
+    .contact-note {
+      margin-top: 24px;
+      padding: 16px;
+      border: 1px solid #F6D5AD;
+      border-radius: 12px;
+      background: #FFF8ED;
+      color: #684321;
+      font-size: 0.9rem;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Gupta Sahu",
+    "jobTitle": "Rotating Equipment Engineer",
+    "url": "https://guptasahu.github.io/",
+    "email": "mailto:theepcengineer@gmail.com",
+    "telephone": "+91-8260664742",
+    "brand": {
+      "@type": "Brand",
+      "name": "The EPC Engineer"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="The EPC Engineer home">
+        <span class="brand-mark">EPC</span>
+        <span>
+          <strong>The EPC Engineer</strong>
+          <small>LEARN. GROW. SOLVE. SUCCEED.</small>
+        </span>
+      </a>
+
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="main-nav">
+        ☰
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav id="main-nav" class="main-nav" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="knowledge-hub.html">Knowledge Hub</a>
+        <a class="nav-link" href="resources.html">Free Resources</a>
+        <a class="nav-link" href="case-studies.html">Case Studies</a>
+        <a class="nav-link" href="testimonials.html">Testimonials</a>
+        <a class="nav-link active" href="contact.html" aria-current="page">Contact</a>
+        <a class="btn btn-primary nav-cta" href="booking.html">Book Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow light">Contact</p>
+        <h1>Tell me what you are trying to solve</h1>
+        <p class="hero-text">
+          Share your objective, relevant context and desired outcome. Please do not
+          submit proprietary drawings, confidential client information or controlled
+          project data through this public form.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid grid-2">
+        <div class="content">
+          <p class="eyebrow">Get in touch</p>
+          <h2>Start the conversation</h2>
+
+          <div class="contact-details">
+            <article class="card contact-card">
+              <strong>Email</strong>
+              <p>
+                <a href="mailto:theepcengineer@gmail.com">
+                  theepcengineer@gmail.com
+                </a>
+              </p>
+            </article>
+
+            <article class="card contact-card">
+              <strong>LinkedIn</strong>
+              <p>
+                <a href="https://www.linkedin.com/in/gupta-sahu" target="_blank" rel="noopener noreferrer">
+                  linkedin.com/in/gupta-sahu
+                </a>
+              </p>
+            </article>
+
+            <article class="card contact-card">
+              <strong>WhatsApp</strong>
+              <p>
+                <a href="tel:+918260664742">+91 82606 64742</a>
+              </p>
+              <a
+                class="whatsapp-button"
+                href="https://wa.me/918260664742?text=Hello%20Gupta%20Sahu%2C%20I%20visited%20The%20EPC%20Engineer%20website%20and%20would%20like%20to%20connect."
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat with Gupta Sahu on WhatsApp"
+              >
+                Chat on WhatsApp
+              </a>
+            </article>
+          </div>
+
+          <p class="contact-note">
+            For technical enquiries, provide the equipment type, general service,
+            objective and expected timeline. Do not include confidential project files
+            or client-restricted information.
+          </p>
+        </div>
+
+        <form class="form" data-demo>
+          <h2>Enquiry Form</h2>
+
+          <div class="form-grid">
+            <label>
+              <span>Full name</span>
+              <input name="name" type="text" required autocomplete="name">
+            </label>
+
+            <label>
+              <span>Work email</span>
+              <input name="email" type="email" required autocomplete="email">
+            </label>
+
+            <label>
+              <span>Company or institution</span>
+              <input name="company" type="text" autocomplete="organization">
+            </label>
+
+            <label>
+              <span>Role or discipline</span>
+              <input name="role" type="text" autocomplete="organization-title">
+            </label>
+          </div>
+
+          <label>
+            <span>How can I help?</span>
+            <select name="service" required>
+              <option value="">Select a service</option>
+              <option value="technical-consultation">Technical consultation</option>
+              <option value="resume-review">Resume review</option>
+              <option value="career-mentoring">Career mentoring</option>
+              <option value="training-enquiry">Technical training enquiry</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Objective and context</span>
+            <textarea
+              name="message"
+              required
+              placeholder="Describe the challenge, required outcome and preferred timeline. Do not include confidential information."
+            ></textarea>
+          </label>
+
+          <label>
+            <input type="checkbox" required style="width:auto">
+            I agree to the privacy notice and consent to being contacted about this enquiry.
+          </label>
+
+          <button class="btn btn-primary" type="submit">Send Enquiry</button>
+
+          <div class="success" role="status">
+            This demonstration form has not transmitted any information. Connect the
+            form to Formspree, Netlify Forms or a secure backend before launch.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-row">
+        <div>
+          <h2>Prefer a scheduled discussion?</h2>
+          <p>Choose a resume review, technical consultation or career mentoring session.</p>
+        </div>
+        <a class="btn btn-dark" href="booking.html">Book a Consultation →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h2>The EPC Engineer</h2>
+        <p>
+          Practical rotating-equipment knowledge, technical consulting and career
+          mentoring for engineers.
+        </p>
+        <p class="social">
+          <a href="https://www.linkedin.com/in/gupta-sahu" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+          <a href="mailto:theepcengineer@gmail.com">Email</a> ·
+          <a
+            href="https://wa.me/918260664742?text=Hello%20Gupta%20Sahu%2C%20I%20visited%20The%20EPC%20Engineer%20website%20and%20would%20like%20to%20connect."
+            target="_blank"
+            rel="noopener noreferrer"
+          >WhatsApp</a>
+        </p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <a href="knowledge-hub.html">Knowledge Hub</a>
+        <a href="resources.html">Free Resources</a>
+        <a href="case-studies.html">Case Studies</a>
+      </div>
+
+      <div>
+        <h3>Work with Gupta</h3>
+        <a href="booking.html">Book Consultation</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> Gupta Sahu.
+      <a href="privacy.html">Privacy</a> ·
+      <a href="terms.html">Terms</a> ·
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
