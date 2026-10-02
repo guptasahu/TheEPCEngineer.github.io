@@ -1,6 +1,333 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Book an Engineering Consultation | The EPC Engineer</title><meta name="description" content="Book a resume review, technical consultation or engineering mentoring session."><meta name="keywords" content="Book Rotating Equipment Consultation, Engineering Mentoring"><meta name="author" content="Gupta Sahu"><meta name="theme-color" content="#0D3B66"><meta property="og:type" content="website"><meta property="og:title" content="Book an Engineering Consultation | The EPC Engineer"><meta property="og:description" content="Book a resume review, technical consultation or engineering mentoring session."><meta property="og:image" content="assets/images/logo.svg"><link rel="canonical" href="https://www.theepcengineer.com/booking.html"><link rel="stylesheet" href="assets/css/style.css"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Gupta Sahu","jobTitle":"Rotating Equipment Engineer","url":"https://www.theepcengineer.com","brand":{"@type":"Brand","name":"The EPC Engineer"}}</script></head><body><a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><div class="container nav-wrap">
-<a class="brand" href="index.html" aria-label="The EPC Engineer home"><span class="brand-mark">EPC</span><span><strong>The EPC Engineer</strong><small>LEARN. GROW. SOLVE. SUCCEED.</small></span></a>
-<button class="menu-btn" aria-expanded="false" aria-controls="main-nav">☰<span class="sr-only">Menu</span></button>
-<nav id="main-nav" class="main-nav" aria-label="Primary navigation"><a class="nav-link " href="index.html">Home</a><a class="nav-link " href="about.html">About</a><a class="nav-link " href="services.html">Services</a><a class="nav-link " href="knowledge-hub.html">Knowledge Hub</a><a class="nav-link " href="resources.html">Free Resources</a><a class="nav-link " href="case-studies.html">Case Studies</a><a class="nav-link " href="testimonials.html">Testimonials</a><a class="nav-link " href="contact.html">Contact</a><a class="btn btn-primary nav-cta" href="booking.html">Book Consultation</a></nav>
-</div></header><main id="main"><section class="page-hero"><div class="container"><p class="eyebrow light">Book a Consultation</p><h1>Choose the right session for your objective</h1><p class="hero-text">Clear scope, preparation and next steps without disclosing confidential information.</p></div></section><section class="section"><div class="container grid grid-3"><article class="card"><h2>Resume Review</h2><p class="price">60 minutes · ₹2,499 / US$39</p><p>Resume markup, positioning feedback, interview priorities and action checklist.</p><a class="btn btn-dark" href="#calendar">Select</a></article><article class="card"><h2>Technical Consultation</h2><p class="price">90 minutes · ₹11,500 / US$175</p><p>Non-confidential pre-read, focused discussion and concise action note.</p><a class="btn btn-dark" href="#calendar">Select</a></article><article class="card"><h2>Career Mentoring</h2><p class="price">60 minutes · ₹3,499 / US$55</p><p>Skills-gap review, personalized roadmap and 30-day development plan.</p><a class="btn btn-dark" href="#calendar">Select</a></article></div></section><section id="calendar" class="section alt"><div class="container grid grid-2"><div class="content"><h2>Booking process</h2><ol><li>Choose an available date and timezone.</li><li>Complete the preparation form.</li><li>Pay through a secure hosted checkout.</li><li>Receive a calendar invitation and joining link.</li><li>Receive agreed follow-up notes.</li></ol></div><div class="card"><h2>Calendar integration</h2><p>Embed Microsoft Bookings or Calendly here. Configure Asia/Kolkata as your home timezone, buffers, cancellation policy and reminders.</p><a class="btn btn-primary" href="contact.html">Request a Session</a></div></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h2>The EPC Engineer</h2><p>Practical rotating-equipment knowledge, technical consulting and career mentoring for engineers.</p><p class="social"><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a> · <a href="mailto:hello@theepcengineer.com">Email</a> · <a href="https://wa.me/" rel="noopener">WhatsApp</a></p></div><div><h3>Explore</h3><a href="knowledge-hub.html">Knowledge Hub</a><a href="resources.html">Free Resources</a><a href="case-studies.html">Case Studies</a></div><div><h3>Work with Gupta</h3><a href="booking.html">Book Consultation</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom">© <span id="year"></span> Gupta Sahu. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></div></footer><script src="assets/js/main.js" defer></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Book an Engineering Consultation | The EPC Engineer</title>
+  <meta name="description" content="Book a resume review, rotating equipment technical consultation or engineering career mentoring session with Gupta Sahu.">
+  <meta name="keywords" content="Rotating Equipment Consultation, Engineering Mentoring, Resume Review for Engineers, Gupta Sahu">
+  <meta name="author" content="Gupta Sahu">
+  <meta name="theme-color" content="#0D3B66">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Book an Engineering Consultation | The EPC Engineer">
+  <meta property="og:description" content="Choose a resume review, technical consultation or career mentoring session.">
+  <meta property="og:image" content="assets/images/logo.svg">
+
+  <link rel="canonical" href="https://guptasahu.github.io/booking.html">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
+
+  <style>
+    .session-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .session-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .session-card .btn {
+      margin-top: auto;
+    }
+
+    .session-price {
+      margin: 10px 0;
+      color: #CF7029;
+      font-weight: 900;
+    }
+
+    .booking-layout {
+      display: grid;
+      grid-template-columns: minmax(270px, .65fr) minmax(520px, 1.35fr);
+      gap: 32px;
+      align-items: start;
+    }
+
+    .booking-process {
+      position: sticky;
+      top: 100px;
+    }
+
+    .booking-process ol {
+      padding-left: 24px;
+    }
+
+    .booking-process li {
+      margin-bottom: 16px;
+    }
+
+    .calendar-card {
+      padding: 28px;
+      overflow: hidden;
+    }
+
+    .calendar-card h2 {
+      margin-top: 0;
+    }
+
+
+
+    .calendly-inline-widget {
+      width: 100%;
+      min-width: 320px;
+      height: 760px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .calendar-fallback {
+      margin-top: 16px;
+      color: #64748B;
+      font-size: .9rem;
+    }
+
+    .calendar-fallback a {
+      color: #0D3B66;
+      font-weight: 800;
+    }
+
+    .selected-service {
+      margin: 16px 0;
+      padding: 12px 14px;
+      border-left: 5px solid #F4A261;
+      border-radius: 8px;
+      background: #F6F8FB;
+    }
+
+    @media (max-width: 1000px) {
+      .session-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-process {
+        position: static;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .calendar-card {
+        padding: 14px;
+      }
+
+      .calendly-inline-widget {
+        min-width: 100% !important;
+        height: 780px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Engineering Consultation and Mentoring",
+    "provider": {
+      "@type": "Person",
+      "name": "Gupta Sahu",
+      "jobTitle": "Rotating Equipment Engineer"
+    },
+    "areaServed": "Worldwide",
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceUrl": "https://guptasahu.github.io/booking.html"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="The EPC Engineer home">
+        <span class="brand-mark">EPC</span>
+        <span>
+          <strong>The EPC Engineer</strong>
+          <small>LEARN. GROW. SOLVE. SUCCEED.</small>
+        </span>
+      </a>
+
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="main-nav">
+        ☰
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav id="main-nav" class="main-nav" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="knowledge-hub.html">Knowledge Hub</a>
+        <a class="nav-link" href="resources.html">Free Resources</a>
+        <a class="nav-link" href="case-studies.html">Case Studies</a>
+        <a class="nav-link" href="testimonials.html">Testimonials</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="btn btn-primary nav-cta" href="booking.html" aria-current="page">Book Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow light">Book a consultation</p>
+        <h1>Choose the right session for your objective</h1>
+        <p class="hero-text">
+          Select a focused service, choose an available appointment and receive a
+          calendar invitation. Do not submit confidential project information through
+          the public booking form.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Session options</p>
+          <h2>Choose how you would like to work together</h2>
+          <p>Select a service below, then choose an available date and time in the calendar.</p>
+        </div>
+
+        <div class="session-grid">
+          <article class="card session-card">
+            <h2>Resume Review Session</h2>
+            <p class="session-price">60 minutes · ₹2,499 / US$39</p>
+            <p>Resume markup, professional positioning feedback, interview priorities and an action checklist.</p>
+            <a class="btn btn-dark service-select" href="#calendar" data-service="Resume Review Session">Select Resume Review</a>
+          </article>
+
+          <article class="card session-card">
+            <h2>Technical Consultation</h2>
+            <p class="session-price">90 minutes · ₹11,500 / US$175</p>
+            <p>Non-confidential pre-read, focused rotating-equipment discussion and a concise action note.</p>
+            <a class="btn btn-dark service-select" href="#calendar" data-service="Technical Consultation">Select Consultation</a>
+          </article>
+
+          <article class="card session-card">
+            <h2>Career Mentoring Session</h2>
+            <p class="session-price">60 minutes · ₹3,499 / US$55</p>
+            <p>Skills-gap review, personalized learning roadmap and a practical 30-day development plan.</p>
+            <a class="btn btn-dark service-select" href="#calendar" data-service="Career Mentoring Session">Select Mentoring</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="calendar" class="section alt">
+      <div class="container booking-layout">
+        <aside class="content booking-process">
+          <p class="eyebrow">Simple scheduling</p>
+          <h2>Booking process</h2>
+          <ol>
+            <li>Choose an available date and time zone.</li>
+            <li>Complete the short preparation form.</li>
+            <li>Confirm the session and complete payment when enabled.</li>
+            <li>Receive a calendar invitation and online meeting link.</li>
+            <li>Receive agreed follow-up notes after the session.</li>
+          </ol>
+
+          <div class="selected-service">
+            Selected service: <strong id="selected-service-name">Technical Consultation</strong>
+          </div>
+
+          <p class="small">
+            The calendar automatically displays appointment times in the visitor's local time zone.
+            Your home time zone should be configured as Asia/Kolkata in Calendly.
+          </p>
+        </aside>
+
+        <div class="card calendar-card">
+          <h2>Choose a Date and Time</h2>
+          <p>Select an available appointment using the secure scheduling calendar below.</p>
+
+
+
+          <!-- Calendly inline widget begin -->
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/theepcengineer?hide_gdpr_banner=1&amp;background_color=ffffff&amp;text_color=172033&amp;primary_color=f4a261"
+          ></div>
+          <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          <!-- Calendly inline widget end -->
+
+          <p class="calendar-fallback">
+            If the embedded calendar does not load,
+            <a
+              href="https://calendly.com/theepcengineer"
+              target="_blank"
+              rel="noopener noreferrer"
+            >open the booking calendar in a new tab</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-row">
+        <div>
+          <h2>Need help choosing a session?</h2>
+          <p>Send a brief, non-confidential description of your objective before booking.</p>
+        </div>
+        <a class="btn btn-dark" href="contact.html">Contact Gupta →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h2>The EPC Engineer</h2>
+        <p>Practical rotating-equipment knowledge, technical consulting and career mentoring for engineers.</p>
+        <p class="social">
+          <a href="https://www.linkedin.com/in/gupta-sahu" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+          <a href="mailto:theepcengineer@gmail.com">Email</a> ·
+          <a href="https://wa.me/918260664742?text=Hello%20Gupta%20Sahu%2C%20I%20visited%20The%20EPC%20Engineer%20website%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <a href="knowledge-hub.html">Knowledge Hub</a>
+        <a href="resources.html">Free Resources</a>
+        <a href="case-studies.html">Case Studies</a>
+      </div>
+
+      <div>
+        <h3>Work with Gupta</h3>
+        <a href="booking.html">Book Consultation</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> Gupta Sahu.
+      <a href="privacy.html">Privacy</a> ·
+      <a href="terms.html">Terms</a> ·
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script>
+    document.querySelectorAll('.service-select').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var selected = link.getAttribute('data-service');
+        var target = document.getElementById('selected-service-name');
+        if (target) target.textContent = selected;
+      });
+    });
+  </script>
+</body>
+</html>
