@@ -115,11 +115,10 @@
   </script>
 
 <style>
-  .form-status { display:none; margin:16px 0 0; padding:13px 15px; border-radius:10px; font-weight:700; }
-  .form-status.is-sending { display:block; background:#f6f8fb; color:#475569; }
-  .form-status.is-success { display:block; border:1px solid #9bd3ac; background:#eaf8ef; color:#176534; }
-  .form-status.is-error { display:block; border:1px solid #efb1b1; background:#fff0f0; color:#9b1c1c; }
-  #enquiry-form button[disabled] { cursor:wait; opacity:.72; }
+.form-status{display:none;margin:16px 0 0;padding:13px 15px;border-radius:10px;font-weight:700}
+.form-status.is-sending{display:block;background:#f6f8fb;color:#475569}
+.form-status.is-success{display:block;border:1px solid #9bd3ac;background:#eaf8ef;color:#176534}
+#enquiry-form button[disabled]{cursor:wait;opacity:.72}
 </style>
 </head>
 
@@ -215,7 +214,8 @@
           </p>
         </div>
 
-        <form class="form" id="enquiry-form" action="https://script.google.com/macros/s/AKfycbzNQ7k1ffFn0jty0kFnu46Qt67B5WBQItRjx0dvtbXUbTYMhaowuVRwANA6YIQgo19L/exec" method="POST">
+        <iframe name="enquiry-response-frame" id="enquiry-response-frame" title="Enquiry submission response" hidden></iframe>
+        <form class="form" id="enquiry-form" action="https://script.google.com/macros/s/AKfycbzNQ7k1ffFn0jty0kFnu46Qt67B5WBQItRjx0dvtbXUbTYMhaowuVRwANA6YIQgo19L/exec" method="POST" target="enquiry-response-frame" accept-charset="UTF-8">
           <h2>Enquiry Form</h2>
 
           <div class="form-grid">
@@ -244,11 +244,11 @@
             <span>How can I help?</span>
             <select name="service" required>
               <option value="">Select a service</option>
-              <option value="technical-consultation">Technical consultation</option>
-              <option value="resume-review">Resume review</option>
-              <option value="career-mentoring">Career mentoring</option>
-              <option value="training-enquiry">Technical training enquiry</option>
-              <option value="other">Other</option>
+              <option value="Technical consultation">Technical consultation</option>
+              <option value="Resume review">Resume review</option>
+              <option value="Career mentoring">Career mentoring</option>
+              <option value="Training enquiry">Technical training enquiry</option>
+              <option value="Other">Other</option>
             </select>
           </label>
 
@@ -329,49 +329,34 @@
   <script src="assets/js/main.js" defer></script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('enquiry-form');
-    const status = document.getElementById('form-status');
-    if (!form || !status) return;
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('enquiry-form');
+  const frame = document.getElementById('enquiry-response-frame');
+  const status = document.getElementById('form-status');
+  const button = form ? form.querySelector('button[type="submit"]') : null;
+  let submitted = false;
 
-    form.addEventListener('submit', async function (event) {
-      event.preventDefault();
+  if (!form || !frame || !status || !button) return;
 
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      const button = form.querySelector('button[type="submit"]');
-      const originalText = button.textContent;
-      button.disabled = true;
-      button.textContent = 'Sending...';
-      status.className = 'form-status is-sending';
-      status.textContent = 'Sending your enquiry...';
-
-      try {
-        await fetch('https://script.google.com/macros/s/AKfycbzNQ7k1ffFn0jty0kFnu46Qt67B5WBQItRjx0dvtbXUbTYMhaowuVRwANA6YIQgo19L/exec', {
-          method: 'POST',
-          mode: 'no-cors',
-          body: new FormData(form)
-        });
-
-        form.reset();
-        status.className = 'form-status is-success';
-        status.textContent = 'Thank you. Your enquiry has been submitted.';
-        button.textContent = 'Enquiry Sent';
-      } catch (error) {
-        status.className = 'form-status is-error';
-        status.textContent = 'Unable to send the enquiry. Please email theepcengineer@gmail.com.';
-        button.textContent = originalText;
-      } finally {
-        button.disabled = false;
-        setTimeout(function () {
-          if (button.textContent === 'Enquiry Sent') button.textContent = originalText;
-        }, 4000);
-      }
-    });
+  form.addEventListener('submit', function () {
+    if (!form.checkValidity()) return;
+    submitted = true;
+    button.disabled = true;
+    button.textContent = 'Sending...';
+    status.className = 'form-status is-sending';
+    status.textContent = 'Sending your enquiry...';
   });
+
+  frame.addEventListener('load', function () {
+    if (!submitted) return;
+    submitted = false;
+    form.reset();
+    button.disabled = false;
+    button.textContent = 'Send Enquiry';
+    status.className = 'form-status is-success';
+    status.textContent = 'Thank you. Your enquiry has been submitted.';
+  });
+});
 </script>
 </body>
 </html>
