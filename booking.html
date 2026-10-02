@@ -255,10 +255,19 @@
 
           <!-- Calendly inline widget begin -->
           <div
+            id="calendly-calendar"
             class="calendly-inline-widget"
-            data-url="https://calendly.com/theepcengineer?hide_gdpr_banner=1&amp;background_color=ffffff&amp;text_color=172033&amp;primary_color=f4a261"
+            data-auto-load="false"
+            aria-label="Calendly appointment calendar"
           ></div>
-          <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          <noscript>
+            <p>
+              JavaScript is required to display the calendar.
+              <a href="https://calendly.com/theepcengineer" target="_blank" rel="noopener noreferrer">
+                Open the Calendly booking page
+              </a>.
+            </p>
+          </noscript>
           <!-- Calendly inline widget end -->
 
           <p class="calendar-fallback">
@@ -320,7 +329,21 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js"></script>
   <script>
+    window.addEventListener('load', function () {
+      var calendar = document.getElementById('calendly-calendar');
+      if (calendar && window.Calendly) {
+        Calendly.initInlineWidget({
+          url: 'https://calendly.com/theepcengineer?hide_gdpr_banner=1&background_color=ffffff&text_color=172033&primary_color=f4a261',
+          parentElement: calendar,
+          prefill: {},
+          utm: {}
+        });
+      }
+    });
+
+
     document.querySelectorAll('.service-select').forEach(function (link) {
       link.addEventListener('click', function () {
         var selected = link.getAttribute('data-service');
