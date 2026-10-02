@@ -350,7 +350,7 @@
       status.textContent = 'Sending your enquiry...';
 
       try {
-        await fetch('https://script.google.com/macros/s/AKfycbzetp0Nsx81fjQjhSpJOiyT57VMTH4LvF71qkNgdz8/exec', {
+        await fetch('https://script.google.com/macros/s/AKfycbzNQ7k1ffFn0jty0kFnu46Qt67B5WBQItRjx0dvtbXUbTYMhaowuVRwANA6YIQgo19L/exec', {
           method: 'POST',
           mode: 'no-cors',
           body: new FormData(form)
@@ -358,7 +358,7 @@
 
         form.reset();
         status.className = 'form-status is-success';
-        status.textContent = 'Thank you. Your enquiry has been sent successfully.';
+        status.textContent = 'Thank you. Your enquiry has been submitted.';
         button.textContent = 'Enquiry Sent';
       } catch (error) {
         status.className = 'form-status is-error';
