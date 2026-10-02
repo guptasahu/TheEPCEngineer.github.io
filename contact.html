@@ -113,6 +113,14 @@
     }
   }
   </script>
+
+<style>
+  .form-status { display:none; margin:16px 0 0; padding:13px 15px; border-radius:10px; font-weight:700; }
+  .form-status.is-sending { display:block; background:#f6f8fb; color:#475569; }
+  .form-status.is-success { display:block; border:1px solid #9bd3ac; background:#eaf8ef; color:#176534; }
+  .form-status.is-error { display:block; border:1px solid #efb1b1; background:#fff0f0; color:#9b1c1c; }
+  #enquiry-form button[disabled] { cursor:wait; opacity:.72; }
+</style>
 </head>
 
 <body>
@@ -207,39 +215,34 @@
           </p>
         </div>
 
-        <form class="form" action="https://formsubmit.co/el/carute" method="POST">
+        <form class="form" id="enquiry-form" action="https://script.google.com/macros/s/AKfycbzetp0Nsx81fjQjhSpJOiyT57VMTH4LvF71qkNgdz8/exec" method="POST">
           <h2>Enquiry Form</h2>
-
-          <input type="hidden" name="_subject" value="New enquiry from The EPC Engineer website">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="true">
-          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
 
           <div class="form-grid">
             <label>
               <span>Full name</span>
-              <input name="Full name" type="text" required autocomplete="name">
+              <input name="name" type="text" required autocomplete="name">
             </label>
 
             <label>
               <span>Work email</span>
-              <input name="_replyto" type="email" required autocomplete="email">
+              <input name="email" type="email" required autocomplete="email">
             </label>
 
             <label>
               <span>Company or institution</span>
-              <input name="Company or institution" type="text" autocomplete="organization">
+              <input name="company" type="text" autocomplete="organization">
             </label>
 
             <label>
               <span>Role or discipline</span>
-              <input name="Role or discipline" type="text" autocomplete="organization-title">
+              <input name="role" type="text" autocomplete="organization-title">
             </label>
           </div>
 
           <label>
             <span>How can I help?</span>
-            <select name="Service requested" required>
+            <select name="service" required>
               <option value="">Select a service</option>
               <option value="technical-consultation">Technical consultation</option>
               <option value="resume-review">Resume review</option>
@@ -252,19 +255,20 @@
           <label>
             <span>Objective and context</span>
             <textarea
-              name="Objective and context"
+              name="message"
               required
               placeholder="Describe the challenge, required outcome and preferred timeline. Do not include confidential information."
             ></textarea>
           </label>
 
           <label>
-            <input type="checkbox" name="Privacy consent" value="Agreed" required style="width:auto">
+            <input type="checkbox" name="consent" value="Agreed" required style="width:auto">
             I agree to the privacy notice and consent to being contacted about this enquiry.
           </label>
 
           <button class="btn btn-primary" type="submit">Send Enquiry</button>
 
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -323,5 +327,51 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('enquiry-form');
+    const status = document.getElementById('form-status');
+    if (!form || !status) return;
+
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const button = form.querySelector('button[type="submit"]');
+      const originalText = button.textContent;
+      button.disabled = true;
+      button.textContent = 'Sending...';
+      status.className = 'form-status is-sending';
+      status.textContent = 'Sending your enquiry...';
+
+      try {
+        await fetch('https://script.google.com/macros/s/AKfycbzetp0Nsx81fjQjhSpJOiyT57VMTH4LvF71qkNgdz8/exec', {
+          method: 'POST',
+          mode: 'no-cors',
+          body: new FormData(form)
+        });
+
+        form.reset();
+        status.className = 'form-status is-success';
+        status.textContent = 'Thank you. Your enquiry has been sent successfully.';
+        button.textContent = 'Enquiry Sent';
+      } catch (error) {
+        status.className = 'form-status is-error';
+        status.textContent = 'Unable to send the enquiry. Please email theepcengineer@gmail.com.';
+        button.textContent = originalText;
+      } finally {
+        button.disabled = false;
+        setTimeout(function () {
+          if (button.textContent === 'Enquiry Sent') button.textContent = originalText;
+        }, 4000);
+      }
+    });
+  });
+</script>
 </body>
 </html>
