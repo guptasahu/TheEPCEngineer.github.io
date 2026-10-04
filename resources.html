@@ -1,6 +1,418 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Free Rotating Equipment Engineering Resources | The EPC Engineer</title><meta name="description" content="Free checklists, templates and guides for rotating equipment engineers."><meta name="keywords" content="Pump Inspection Checklist, Technical Bid Evaluation Template, API Standards Guide"><meta name="author" content="Gupta Sahu"><meta name="theme-color" content="#0D3B66"><meta property="og:type" content="website"><meta property="og:title" content="Free Rotating Equipment Engineering Resources | The EPC Engineer"><meta property="og:description" content="Free checklists, templates and guides for rotating equipment engineers."><meta property="og:image" content="assets/images/logo.svg"><link rel="canonical" href="https://www.theepcengineer.com/resources.html"><link rel="stylesheet" href="assets/css/style.css"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Gupta Sahu","jobTitle":"Rotating Equipment Engineer","url":"https://www.theepcengineer.com","brand":{"@type":"Brand","name":"The EPC Engineer"}}</script></head><body><a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><div class="container nav-wrap">
-<a class="brand" href="index.html" aria-label="The EPC Engineer home"><span class="brand-mark">EPC</span><span><strong>The EPC Engineer</strong><small>LEARN. GROW. SOLVE. SUCCEED.</small></span></a>
-<button class="menu-btn" aria-expanded="false" aria-controls="main-nav">☰<span class="sr-only">Menu</span></button>
-<nav id="main-nav" class="main-nav" aria-label="Primary navigation"><a class="nav-link " href="index.html">Home</a><a class="nav-link " href="about.html">About</a><a class="nav-link " href="services.html">Services</a><a class="nav-link " href="knowledge-hub.html">Knowledge Hub</a><a class="nav-link active" href="resources.html">Free Resources</a><a class="nav-link " href="case-studies.html">Case Studies</a><a class="nav-link " href="testimonials.html">Testimonials</a><a class="nav-link " href="contact.html">Contact</a><a class="btn btn-primary nav-cta" href="booking.html">Book Consultation</a></nav>
-</div></header><main id="main"><section class="page-hero"><div class="container"><p class="eyebrow light">Free Resources</p><h1>Download practical engineering tools</h1><p class="hero-text">Useful starting points for inspections, reviews, evaluations and career preparation.</p></div></section><section class="section"><div class="container grid grid-3"><article class="card"><div class="icon">⬇</div><h2>Pump Inspection Checklist</h2><p>A field-ready sequence for visual, mechanical and operating checks.</p><a class="btn btn-dark" href="contact.html">Get Free Resource</a></article><article class="card"><div class="icon">⬇</div><h2>Vendor Review Checklist</h2><p>A controlled review framework for datasheets, drawings and deviations.</p><a class="btn btn-dark" href="contact.html">Get Free Resource</a></article><article class="card"><div class="icon">⬇</div><h2>Technical Bid Evaluation Template</h2><p>A traceable structure for technical comparison and open points.</p><a class="btn btn-dark" href="contact.html">Get Free Resource</a></article><article class="card"><div class="icon">⬇</div><h2>Equipment Datasheet Template</h2><p>A starter template for service, design and mechanical requirements.</p><a class="btn btn-dark" href="contact.html">Get Free Resource</a></article><article class="card"><div class="icon">⬇</div><h2>API Standards Guide</h2><p>A practical map of key standards and their applications.</p><a class="btn btn-dark" href="contact.html">Get Free Resource</a></article><article class="card"><div class="icon">⬇</div><h2>Engineering Interview Guide</h2><p>Technical and behavioral questions with preparation prompts.</p><a class="btn btn-dark" href="contact.html">Get Free Resource</a></article></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h2>The EPC Engineer</h2><p>Practical rotating-equipment knowledge, technical consulting and career mentoring for engineers.</p><p class="social"><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a> · <a href="mailto:hello@theepcengineer.com">Email</a> · <a href="https://wa.me/" rel="noopener">WhatsApp</a></p></div><div><h3>Explore</h3><a href="knowledge-hub.html">Knowledge Hub</a><a href="resources.html">Free Resources</a><a href="case-studies.html">Case Studies</a></div><div><h3>Work with Gupta</h3><a href="booking.html">Book Consultation</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom">© <span id="year"></span> Gupta Sahu. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></div></footer><script src="assets/js/main.js" defer></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Free Rotating Equipment Engineering Resources | The EPC Engineer</title>
+  <meta name="description" content="Free checklists, templates and guides for rotating equipment engineers.">
+  <meta name="keywords" content="Pump Inspection Checklist, Technical Bid Evaluation Template, API Standards Guide">
+  <meta name="author" content="Gupta Sahu">
+  <meta name="theme-color" content="#0D3B66">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Rotating Equipment Engineering Resources | The EPC Engineer">
+  <meta property="og:description" content="Free checklists, templates and guides for rotating equipment engineers.">
+  <meta property="og:image" content="assets/images/logo.svg">
+
+  <link rel="canonical" href="https://www.theepcengineer.com/resources.html">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .resource-download.is-checking {
+      pointer-events: none;
+      opacity: 0.65;
+    }
+
+    .document-modal[hidden] {
+      display: none !important;
+    }
+
+    .document-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+    }
+
+    .document-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(8, 42, 73, 0.74);
+      backdrop-filter: blur(4px);
+    }
+
+    .document-modal-card {
+      position: relative;
+      z-index: 1;
+      width: min(460px, 100%);
+      padding: 32px;
+      border-radius: 22px;
+      background: #ffffff;
+      box-shadow: 0 24px 70px rgba(8, 42, 73, 0.28);
+      text-align: center;
+    }
+
+    .document-modal-icon {
+      display: grid;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 18px;
+      place-items: center;
+      border-radius: 50%;
+      background: #fff3e7;
+      color: #cf7029;
+      font-size: 1.8rem;
+      font-weight: 900;
+    }
+
+    .document-modal-card h2 {
+      margin: 0;
+      color: #0d3b66;
+      font-size: 1.65rem;
+    }
+
+    .document-modal-card p {
+      margin: 12px 0 0;
+      color: #64748b;
+    }
+
+    .document-modal-resource {
+      font-weight: 800;
+      color: #172033 !important;
+    }
+
+    .document-modal-close {
+      margin-top: 22px;
+      border: 0;
+      border-radius: 10px;
+      padding: 12px 22px;
+      background: #0d3b66;
+      color: #ffffff;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .document-modal-close:hover {
+      background: #082a49;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Gupta Sahu",
+    "jobTitle": "Rotating Equipment Engineer",
+    "url": "https://www.theepcengineer.com",
+    "brand": {
+      "@type": "Brand",
+      "name": "The EPC Engineer"
+    }
+  }
+  </script>
+
+  <style>
+    .featured-video-section {
+      background: #f6f8fb;
+    }
+
+    .featured-video-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .featured-video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 22px;
+      background: #082a49;
+      box-shadow: 0 18px 50px rgba(8, 42, 73, 0.18);
+    }
+
+    .featured-video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .featured-video-content h2 {
+      margin-top: 0;
+      color: #0d3b66;
+    }
+
+    .featured-video-content p {
+      color: #64748b;
+    }
+
+    .featured-video-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    @media (max-width: 900px) {
+      .featured-video-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="The EPC Engineer home">
+        <span class="brand-mark">EPC</span>
+        <span>
+          <strong>The EPC Engineer</strong>
+          <small>LEARN. GROW. SOLVE. SUCCEED.</small>
+        </span>
+      </a>
+
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="main-nav">
+        ☰<span class="sr-only">Menu</span>
+      </button>
+
+      <nav id="main-nav" class="main-nav" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="knowledge-hub.html">Knowledge Hub</a>
+        <a class="nav-link active" href="resources.html" aria-current="page">Free Resources</a>
+        <a class="nav-link" href="case-studies.html">Case Studies</a>
+        <a class="nav-link" href="testimonials.html">Testimonials</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="btn btn-primary nav-cta" href="booking.html">Book Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow light">Free Resources</p>
+        <h1>Download practical engineering tools</h1>
+        <p class="hero-text">
+          Useful starting points for inspections, reviews, evaluations and career preparation.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid grid-3">
+        <article class="card resource-card">
+          <div class="icon">⬇</div>
+          <h2>Pump Inspection Checklist</h2>
+          <p>A field-ready sequence for visual, mechanical and operating checks.</p>
+          <a class="btn btn-dark resource-download" href="assets/documents/pump-inspection-checklist.pdf" download="pump-inspection-checklist.pdf">Download Resource</a>
+        </article>
+
+        <article class="card resource-card">
+          <div class="icon">⬇</div>
+          <h2>Vendor Review Checklist</h2>
+          <p>A controlled review framework for datasheets, drawings and deviations.</p>
+          <a class="btn btn-dark resource-download" href="assets/documents/vendor-review-checklist.pdf" download="vendor-review-checklist.pdf">Download Resource</a>
+        </article>
+
+        <article class="card resource-card">
+          <div class="icon">⬇</div>
+          <h2>Technical Bid Evaluation Template</h2>
+          <p>A traceable structure for technical comparison and open points.</p>
+          <a class="btn btn-dark resource-download" href="assets/documents/technical-bid-evaluation-template.pdf" download="technical-bid-evaluation-template.pdf">Download Resource</a>
+        </article>
+
+        <article class="card resource-card">
+          <div class="icon">⬇</div>
+          <h2>Equipment Datasheet Template</h2>
+          <p>A starter template for service, design and mechanical requirements.</p>
+          <a class="btn btn-dark resource-download" href="assets/documents/equipment-datasheet-template.pdf" download="equipment-datasheet-template.pdf">Download Resource</a>
+        </article>
+
+        <article class="card resource-card">
+          <div class="icon">⬇</div>
+          <h2>API Standards Guide</h2>
+          <p>A practical map of key standards and their applications.</p>
+          <a class="btn btn-dark resource-download" href="assets/documents/api-standards-guide.pdf" download="api-standards-guide.pdf">Download Resource</a>
+        </article>
+
+        <article class="card resource-card">
+          <div class="icon">⬇</div>
+          <h2>Engineering Interview Guide</h2>
+          <p>Technical and behavioral questions with preparation prompts.</p>
+          <a class="btn btn-dark resource-download" href="assets/documents/engineering-interview-guide.pdf" download="engineering-interview-guide.pdf">Download Resource</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section featured-video-section" aria-labelledby="featured-video-title">
+      <div class="container featured-video-layout">
+        <div class="featured-video-frame">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/YOUR_VIDEO_ID?rel=0"
+            title="Featured engineering video from The EPC Engineer"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="featured-video-content">
+          <p class="eyebrow">Featured Video</p>
+          <h2 id="featured-video-title">Watch the Latest Engineering Video</h2>
+          <p>
+            Explore practical explanations of rotating equipment, EPC engineering,
+            API standards, equipment selection and vendor-document review.
+          </p>
+
+          <div class="featured-video-actions">
+            <a
+              class="btn btn-primary"
+              href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Watch on YouTube</a>
+
+            <a
+              class="btn btn-dark"
+              href="https://www.youtube.com/@YOUR_CHANNEL_HANDLE"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Visit YouTube Channel</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="document-modal" id="document-modal" hidden role="dialog" aria-modal="true" aria-labelledby="document-modal-title" aria-describedby="document-modal-message">
+    <div class="document-modal-backdrop" data-close-document-modal></div>
+    <div class="document-modal-card" role="document">
+      <div class="document-modal-icon" aria-hidden="true">i</div>
+      <h2 id="document-modal-title">Coming Soon</h2>
+      <p id="document-modal-message">The document is under preparation and will be available soon.</p>
+      <p class="document-modal-resource" id="document-modal-resource"></p>
+      <button class="document-modal-close" type="button" data-close-document-modal>Close</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h2>The EPC Engineer</h2>
+        <p>Practical rotating-equipment knowledge, technical consulting and career mentoring for engineers.</p>
+        <p class="social">
+          <a href="https://www.linkedin.com/in/gupta-sahu" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+          <a href="mailto:theepcengineer@gmail.com">Email</a> ·
+          <a href="https://wa.me/918260664742?text=Hello%20Gupta%20Sahu%2C%20I%20visited%20The%20EPC%20Engineer%20website%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <a href="knowledge-hub.html">Knowledge Hub</a>
+        <a href="resources.html">Free Resources</a>
+        <a href="case-studies.html">Case Studies</a>
+      </div>
+
+      <div>
+        <h3>Work with Gupta</h3>
+        <a href="booking.html">Book Consultation</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> Gupta Sahu.
+      <a href="privacy.html">Privacy</a> ·
+      <a href="terms.html">Terms</a> ·
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const modal = document.getElementById('document-modal');
+      const modalResource = document.getElementById('document-modal-resource');
+      const closeButton = modal.querySelector('.document-modal-close');
+      let lastFocusedElement = null;
+
+      function openComingSoon(resourceTitle) {
+        lastFocusedElement = document.activeElement;
+        modalResource.textContent = resourceTitle;
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+        closeButton.focus();
+      }
+
+      function closeComingSoon() {
+        modal.hidden = true;
+        document.body.style.overflow = '';
+        if (lastFocusedElement) lastFocusedElement.focus();
+      }
+
+      document.querySelectorAll('[data-close-document-modal]').forEach(function (element) {
+        element.addEventListener('click', closeComingSoon);
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && !modal.hidden) closeComingSoon();
+      });
+
+      document.querySelectorAll('.resource-download').forEach(function (link) {
+        link.addEventListener('click', async function (event) {
+          event.preventDefault();
+
+          const card = link.closest('.resource-card');
+          const heading = card ? card.querySelector('h2') : null;
+          const resourceTitle = heading ? heading.textContent.trim() : 'Selected resource';
+          const fileUrl = new URL(link.getAttribute('href'), window.location.href).href;
+          const originalText = link.textContent;
+
+          link.classList.add('is-checking');
+          link.textContent = 'Checking...';
+
+          try {
+            const response = await fetch(fileUrl, {
+              method: 'HEAD',
+              cache: 'no-store'
+            });
+
+            if (!response.ok) {
+              openComingSoon(resourceTitle);
+              return;
+            }
+
+            const downloadLink = document.createElement('a');
+            downloadLink.href = fileUrl;
+            downloadLink.download = link.getAttribute('download') || '';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            downloadLink.remove();
+          } catch (error) {
+            openComingSoon(resourceTitle);
+          } finally {
+            link.classList.remove('is-checking');
+            link.textContent = originalText;
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
