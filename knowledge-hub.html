@@ -1,202 +1,261 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pump, Compressor &amp; Reliability Engineering Articles | The EPC Engineer</title><meta name="description" content="Technical articles about pumps, compressors, reliability, API standards and engineering careers."><meta name="keywords" content="Pump Engineering, Compressor Engineering, Reliability Engineering, API Standards"><meta name="author" content="Gupta Sahu"><meta name="theme-color" content="#0D3B66"><meta property="og:type" content="website"><meta property="og:title" content="Pump, Compressor &amp; Reliability Engineering Articles | The EPC Engineer"><meta property="og:description" content="Technical articles about pumps, compressors, reliability, API standards and engineering careers."><meta property="og:image" content="assets/images/logo.svg"><link rel="canonical" href="https://www.theepcengineer.com/knowledge-hub.html"><link rel="stylesheet" href="assets/css/style.css"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Gupta Sahu","jobTitle":"Rotating Equipment Engineer","url":"https://www.theepcengineer.com","brand":{"@type":"Brand","name":"The EPC Engineer"}}</script>
-<style>
-  .knowledge-filters {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(230px, 320px);
-    gap: 14px;
-    align-items: center;
-  }
-
-  .search-field {
-    position: relative;
-    display: block;
-    min-width: 0;
-  }
-
-  .search-field .search-icon {
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    z-index: 1;
-    transform: translateY(-50%);
-    color: #64748b;
-    font-size: 1.35rem;
-    pointer-events: none;
-  }
-
-  .knowledge-filters #article-search {
-    display: block;
-    width: 100%;
-    min-width: 0;
-    height: 54px;
-    padding: 12px 16px 12px 48px;
-    border: 1px solid #ccd5df;
-    border-radius: 12px;
-    background: #ffffff;
-    color: #172033;
-    font: inherit;
-    font-size: 1rem;
-    outline: none;
-  }
-
-  .knowledge-filters #article-search::placeholder {
-    color: #7b8798;
-    opacity: 1;
-  }
-
-  .knowledge-filters #article-search:focus,
-  .knowledge-filters #article-category:focus {
-    border-color: #0d3b66;
-    box-shadow: 0 0 0 4px rgba(13, 59, 102, 0.12);
-  }
-
-  .knowledge-filters #article-category {
-    display: block;
-    width: 100%;
-    height: 54px;
-    padding: 12px 42px 12px 16px;
-    border: 1px solid #ccd5df;
-    border-radius: 12px;
-    background-color: #ffffff;
-    color: #172033;
-    font: inherit;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-
-  .filter-status {
-    margin: -14px 0 24px;
-    color: #64748b;
-    font-size: .92rem;
-  }
-
-  .no-results {
-    grid-column: 1 / -1;
-    padding: 34px;
-    border: 1px dashed #b8c4d1;
-    border-radius: 16px;
-    background: #f8fafc;
-    color: #475569;
-    text-align: center;
-  }
-
-  @media (max-width: 720px) {
-    .knowledge-filters {
-      grid-template-columns: 1fr;
-    }
-
-    .filter-status {
-      margin-top: -8px;
-    }
-  }
-</style>
-
-<style>
-.download-link{display:inline-flex;align-items:center;gap:6px}
-.download-link.is-checking{pointer-events:none;opacity:.65}
-.document-modal[hidden]{display:none!important}
-.document-modal{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:20px}
-.document-modal-backdrop{position:absolute;inset:0;background:rgba(8,42,73,.74);backdrop-filter:blur(4px)}
-.document-modal-card{position:relative;z-index:1;width:min(460px,100%);padding:32px;border-radius:22px;background:#fff;box-shadow:0 24px 70px rgba(8,42,73,.28);text-align:center}
-.document-modal-icon{display:grid;width:64px;height:64px;margin:0 auto 18px;place-items:center;border-radius:50%;background:#fff3e7;color:#cf7029;font-size:1.8rem;font-weight:900}
-.document-modal-card h2{margin:0;color:#0d3b66;font-size:1.65rem}
-.document-modal-card p{margin:12px 0 0;color:#64748b}
-.document-modal-article{font-weight:800;color:#172033!important}
-.document-modal-close{margin-top:22px;border:0;border-radius:10px;padding:12px 22px;background:#0d3b66;color:#fff;font:inherit;font-weight:800;cursor:pointer}
-.document-modal-close:hover{background:#082a49}
-</style>
-</head><body><a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><div class="container nav-wrap">
-<a class="brand" href="index.html" aria-label="The EPC Engineer home"><span class="brand-mark">EPC</span><span><strong>The EPC Engineer</strong><small>LEARN. GROW. SOLVE. SUCCEED.</small></span></a>
-<button class="menu-btn" aria-expanded="false" aria-controls="main-nav">☰<span class="sr-only">Menu</span></button>
-<nav id="main-nav" class="main-nav" aria-label="Primary navigation"><a class="nav-link " href="index.html">Home</a><a class="nav-link " href="about.html">About</a><a class="nav-link " href="services.html">Services</a><a class="nav-link active" href="knowledge-hub.html">Knowledge Hub</a><a class="nav-link " href="resources.html">Free Resources</a><a class="nav-link " href="case-studies.html">Case Studies</a><a class="nav-link " href="testimonials.html">Testimonials</a><a class="nav-link " href="contact.html">Contact</a><a class="btn btn-primary nav-cta" href="booking.html">Book Consultation</a></nav>
-</div></header><main id="main"><section class="page-hero"><div class="container"><p class="eyebrow light">Knowledge Hub</p><h1>Rotating equipment knowledge you can use</h1><p class="hero-text">Practical articles for design, EPC review, reliability, maintenance and career development.</p></div></section><section class="section"><div class="container"><div class="filters knowledge-filters">
-<label class="search-field" for="article-search">
-  <span class="search-icon" aria-hidden="true">⌕</span>
-  <input id="article-search" type="search" placeholder="Type to search articles, for example: pump, API 610, vibration..." aria-label="Search articles" autocomplete="off">
-</label>
-<select id="article-category" aria-label="Filter articles by category"><option value="All">All categories</option><option>Pumps</option><option>Compressors</option><option>Turbines</option><option>Vibration Analysis</option><option>Mechanical Seals</option><option>Reliability Engineering</option><option>Maintenance Strategies</option><option>API Standards</option><option>Engineering Careers</option></select></div><p id="filter-status" class="filter-status" aria-live="polite">Showing all 50 articles</p><div class="grid grid-3" id="article-grid"><article class="card article-card" data-article data-category="Pumps" data-title="API 610 Centrifugal pump selection complete workflow"><div class="article-meta"><span>Pumps</span><span>1 hr </span></div><h3>API 610 Centrifugal pump selection:a complete workflow </h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/api-610-centrifugal-pump-selection-complete-workflow.pdf" download="api-610-centrifugal-pump-selection-complete-workflow.pdf" aria-label="Download Centrifugal pump selection: a complete workflow as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Compressors" data-title="bep, por and aor explained"><div class="article-meta"><span>Compressors</span><span>7 min</span></div><h3>BEP, POR and AOR explained</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/bep-por-and-aor-explained.pdf" download="bep-por-and-aor-explained.pdf" aria-label="Download BEP, POR and AOR explained as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Turbines" data-title="system curves for practicing engineers"><div class="article-meta"><span>Turbines</span><span>8 min</span></div><h3>System curves for practicing engineers</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/system-curves-for-practicing-engineers.pdf" download="system-curves-for-practicing-engineers.pdf" aria-label="Download System curves for practicing engineers as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Vibration Analysis" data-title="npsha versus npshr with a worked example"><div class="article-meta"><span>Vibration Analysis</span><span>9 min</span></div><h3>NPSHa versus NPSHr with a worked example</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/npsha-versus-npshr-with-a-worked-example.pdf" download="npsha-versus-npshr-with-a-worked-example.pdf" aria-label="Download NPSHa versus NPSHr with a worked example as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Mechanical Seals" data-title="pump cavitation symptoms and prevention"><div class="article-meta"><span>Mechanical Seals</span><span>10 min</span></div><h3>Pump cavitation symptoms and prevention</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/pump-cavitation-symptoms-and-prevention.pdf" download="pump-cavitation-symptoms-and-prevention.pdf" aria-label="Download Pump cavitation symptoms and prevention as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Reliability Engineering" data-title="minimum continuous stable flow explained"><div class="article-meta"><span>Reliability Engineering</span><span>11 min</span></div><h3>Minimum continuous stable flow explained</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/minimum-continuous-stable-flow-explained.pdf" download="minimum-continuous-stable-flow-explained.pdf" aria-label="Download Minimum continuous stable flow explained as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Maintenance Strategies" data-title="pump shutoff head and driver checks"><div class="article-meta"><span>Maintenance Strategies</span><span>12 min</span></div><h3>Pump shutoff head and driver checks</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/pump-shutoff-head-and-driver-checks.pdf" download="pump-shutoff-head-and-driver-checks.pdf" aria-label="Download Pump shutoff head and driver checks as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="API Standards" data-title="parallel and series pump operation"><div class="article-meta"><span>API Standards</span><span>6 min</span></div><h3>Parallel and series pump operation</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/parallel-and-series-pump-operation.pdf" download="parallel-and-series-pump-operation.pdf" aria-label="Download Parallel and series pump operation as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Engineering Careers" data-title="pump recirculation and low-flow damage"><div class="article-meta"><span>Engineering Careers</span><span>7 min</span></div><h3>Pump recirculation and low-flow damage</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/pump-recirculation-and-low-flow-damage.pdf" download="pump-recirculation-and-low-flow-damage.pdf" aria-label="Download Pump recirculation and low-flow damage as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Pumps" data-title="api 610 datasheet review checklist"><div class="article-meta"><span>Pumps</span><span>8 min</span></div><h3>API 610 datasheet review checklist</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/api-610-datasheet-review-checklist.pdf" download="api-610-datasheet-review-checklist.pdf" aria-label="Download API 610 datasheet review checklist as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Compressors" data-title="centrifugal compressor fundamentals"><div class="article-meta"><span>Compressors</span><span>9 min</span></div><h3>Centrifugal compressor fundamentals</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/centrifugal-compressor-fundamentals.pdf" download="centrifugal-compressor-fundamentals.pdf" aria-label="Download Centrifugal compressor fundamentals as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Turbines" data-title="compressor maps and surge explained"><div class="article-meta"><span>Turbines</span><span>10 min</span></div><h3>Compressor maps and surge explained</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/compressor-maps-and-surge-explained.pdf" download="compressor-maps-and-surge-explained.pdf" aria-label="Download Compressor maps and surge explained as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Vibration Analysis" data-title="anti-surge control philosophy"><div class="article-meta"><span>Vibration Analysis</span><span>11 min</span></div><h3>Anti-surge control philosophy</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/anti-surge-control-philosophy.pdf" download="anti-surge-control-philosophy.pdf" aria-label="Download Anti-surge control philosophy as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Mechanical Seals" data-title="polytropic head in simple terms"><div class="article-meta"><span>Mechanical Seals</span><span>12 min</span></div><h3>Polytropic head in simple terms</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/polytropic-head-in-simple-terms.pdf" download="polytropic-head-in-simple-terms.pdf" aria-label="Download Polytropic head in simple terms as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Reliability Engineering" data-title="compressor performance test review"><div class="article-meta"><span>Reliability Engineering</span><span>6 min</span></div><h3>Compressor performance test review</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/compressor-performance-test-review.pdf" download="compressor-performance-test-review.pdf" aria-label="Download Compressor performance test review as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Maintenance Strategies" data-title="dry gas seal basics"><div class="article-meta"><span>Maintenance Strategies</span><span>7 min</span></div><h3>Dry gas seal basics</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/dry-gas-seal-basics.pdf" download="dry-gas-seal-basics.pdf" aria-label="Download Dry gas seal basics as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="API Standards" data-title="compressor fouling and performance loss"><div class="article-meta"><span>API Standards</span><span>8 min</span></div><h3>Compressor fouling and performance loss</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/compressor-fouling-and-performance-loss.pdf" download="compressor-fouling-and-performance-loss.pdf" aria-label="Download Compressor fouling and performance loss as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Engineering Careers" data-title="reciprocating versus centrifugal compressors"><div class="article-meta"><span>Engineering Careers</span><span>9 min</span></div><h3>Reciprocating versus centrifugal compressors</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/reciprocating-versus-centrifugal-compressors.pdf" download="reciprocating-versus-centrifugal-compressors.pdf" aria-label="Download Reciprocating versus centrifugal compressors as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Pumps" data-title="compressor vibration troubleshooting"><div class="article-meta"><span>Pumps</span><span>10 min</span></div><h3>Compressor vibration troubleshooting</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/compressor-vibration-troubleshooting.pdf" download="compressor-vibration-troubleshooting.pdf" aria-label="Download Compressor vibration troubleshooting as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Compressors" data-title="api 617 vendor review checklist"><div class="article-meta"><span>Compressors</span><span>11 min</span></div><h3>API 617 vendor review checklist</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/api-617-vendor-review-checklist.pdf" download="api-617-vendor-review-checklist.pdf" aria-label="Download API 617 vendor review checklist as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Turbines" data-title="steam turbine fundamentals"><div class="article-meta"><span>Turbines</span><span>12 min</span></div><h3>Steam turbine fundamentals</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/steam-turbine-fundamentals.pdf" download="steam-turbine-fundamentals.pdf" aria-label="Download Steam turbine fundamentals as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Vibration Analysis" data-title="turbine overspeed protection"><div class="article-meta"><span>Vibration Analysis</span><span>6 min</span></div><h3>Turbine overspeed protection</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/turbine-overspeed-protection.pdf" download="turbine-overspeed-protection.pdf" aria-label="Download Turbine overspeed protection as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Mechanical Seals" data-title="mechanical seal failure modes"><div class="article-meta"><span>Mechanical Seals</span><span>7 min</span></div><h3>Mechanical seal failure modes</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/mechanical-seal-failure-modes.pdf" download="mechanical-seal-failure-modes.pdf" aria-label="Download Mechanical seal failure modes as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Reliability Engineering" data-title="seal flush plans explained"><div class="article-meta"><span>Reliability Engineering</span><span>8 min</span></div><h3>Seal flush plans explained</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/seal-flush-plans-explained.pdf" download="seal-flush-plans-explained.pdf" aria-label="Download Seal flush plans explained as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Maintenance Strategies" data-title="api 682 plan selection guide"><div class="article-meta"><span>Maintenance Strategies</span><span>9 min</span></div><h3>API 682 plan selection guide</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/api-682-plan-selection-guide.pdf" download="api-682-plan-selection-guide.pdf" aria-label="Download API 682 plan selection guide as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="API Standards" data-title="bearing failure pattern guide"><div class="article-meta"><span>API Standards</span><span>10 min</span></div><h3>Bearing failure pattern guide</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/bearing-failure-pattern-guide.pdf" download="bearing-failure-pattern-guide.pdf" aria-label="Download Bearing failure pattern guide as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Engineering Careers" data-title="shaft alignment best practices"><div class="article-meta"><span>Engineering Careers</span><span>11 min</span></div><h3>Shaft alignment best practices</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/shaft-alignment-best-practices.pdf" download="shaft-alignment-best-practices.pdf" aria-label="Download Shaft alignment best practices as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Pumps" data-title="soft foot diagnosis"><div class="article-meta"><span>Pumps</span><span>12 min</span></div><h3>Soft foot diagnosis</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/soft-foot-diagnosis.pdf" download="soft-foot-diagnosis.pdf" aria-label="Download Soft foot diagnosis as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Compressors" data-title="rotor balancing fundamentals"><div class="article-meta"><span>Compressors</span><span>6 min</span></div><h3>Rotor balancing fundamentals</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/rotor-balancing-fundamentals.pdf" download="rotor-balancing-fundamentals.pdf" aria-label="Download Rotor balancing fundamentals as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Turbines" data-title="vibration spectrum reading for beginners"><div class="article-meta"><span>Turbines</span><span>7 min</span></div><h3>Vibration spectrum reading for beginners</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/vibration-spectrum-reading-for-beginners.pdf" download="vibration-spectrum-reading-for-beginners.pdf" aria-label="Download Vibration spectrum reading for beginners as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Vibration Analysis" data-title="1x, 2x and harmonics explained"><div class="article-meta"><span>Vibration Analysis</span><span>8 min</span></div><h3>1X, 2X and harmonics explained</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/1x-2x-and-harmonics-explained.pdf" download="1x-2x-and-harmonics-explained.pdf" aria-label="Download 1X, 2X and harmonics explained as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Mechanical Seals" data-title="resonance identification in rotating equipment"><div class="article-meta"><span>Mechanical Seals</span><span>9 min</span></div><h3>Resonance identification in rotating equipment</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/resonance-identification-in-rotating-equipment.pdf" download="resonance-identification-in-rotating-equipment.pdf" aria-label="Download Resonance identification in rotating equipment as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Reliability Engineering" data-title="reliability-centered maintenance basics"><div class="article-meta"><span>Reliability Engineering</span><span>10 min</span></div><h3>Reliability-centered maintenance basics</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/reliability-centered-maintenance-basics.pdf" download="reliability-centered-maintenance-basics.pdf" aria-label="Download Reliability-centered maintenance basics as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Maintenance Strategies" data-title="preventive versus predictive maintenance"><div class="article-meta"><span>Maintenance Strategies</span><span>11 min</span></div><h3>Preventive versus predictive maintenance</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/preventive-versus-predictive-maintenance.pdf" download="preventive-versus-predictive-maintenance.pdf" aria-label="Download Preventive versus predictive maintenance as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="API Standards" data-title="criticality ranking for rotating assets"><div class="article-meta"><span>API Standards</span><span>12 min</span></div><h3>Criticality ranking for rotating assets</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/criticality-ranking-for-rotating-assets.pdf" download="criticality-ranking-for-rotating-assets.pdf" aria-label="Download Criticality ranking for rotating assets as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Engineering Careers" data-title="root cause analysis for equipment failures"><div class="article-meta"><span>Engineering Careers</span><span>6 min</span></div><h3>Root cause analysis for equipment failures</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/root-cause-analysis-for-equipment-failures.pdf" download="root-cause-analysis-for-equipment-failures.pdf" aria-label="Download Root cause analysis for equipment failures as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Pumps" data-title="bad actor management program"><div class="article-meta"><span>Pumps</span><span>7 min</span></div><h3>Bad actor management program</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/bad-actor-management-program.pdf" download="bad-actor-management-program.pdf" aria-label="Download Bad actor management program as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Compressors" data-title="lubrication contamination control"><div class="article-meta"><span>Compressors</span><span>8 min</span></div><h3>Lubrication contamination control</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/lubrication-contamination-control.pdf" download="lubrication-contamination-control.pdf" aria-label="Download Lubrication contamination control as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Turbines" data-title="condition monitoring program roadmap"><div class="article-meta"><span>Turbines</span><span>9 min</span></div><h3>Condition monitoring program roadmap</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/condition-monitoring-program-roadmap.pdf" download="condition-monitoring-program-roadmap.pdf" aria-label="Download Condition monitoring program roadmap as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Vibration Analysis" data-title="maintenance kpi selection"><div class="article-meta"><span>Vibration Analysis</span><span>10 min</span></div><h3>Maintenance KPI selection</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/maintenance-kpi-selection.pdf" download="maintenance-kpi-selection.pdf" aria-label="Download Maintenance KPI selection as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Mechanical Seals" data-title="api 610 versus iso 5199"><div class="article-meta"><span>Mechanical Seals</span><span>11 min</span></div><h3>API 610 versus ISO 5199</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/api-610-versus-iso-5199.pdf" download="api-610-versus-iso-5199.pdf" aria-label="Download API 610 versus ISO 5199 as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Reliability Engineering" data-title="api 670 machinery protection overview"><div class="article-meta"><span>Reliability Engineering</span><span>12 min</span></div><h3>API 670 machinery protection overview</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/api-670-machinery-protection-overview.pdf" download="api-670-machinery-protection-overview.pdf" aria-label="Download API 670 machinery protection overview as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Maintenance Strategies" data-title="how to review a vendor deviation list"><div class="article-meta"><span>Maintenance Strategies</span><span>6 min</span></div><h3>How to review a vendor deviation list</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/how-to-review-a-vendor-deviation-list.pdf" download="how-to-review-a-vendor-deviation-list.pdf" aria-label="Download How to review a vendor deviation list as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="API Standards" data-title="technical bid evaluation step by step"><div class="article-meta"><span>API Standards</span><span>7 min</span></div><h3>Technical bid evaluation step by step</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/technical-bid-evaluation-step-by-step.pdf" download="technical-bid-evaluation-step-by-step.pdf" aria-label="Download Technical bid evaluation step by step as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Engineering Careers" data-title="mechanical datasheet quality checklist"><div class="article-meta"><span>Engineering Careers</span><span>8 min</span></div><h3>Mechanical datasheet quality checklist</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/mechanical-datasheet-quality-checklist.pdf" download="mechanical-datasheet-quality-checklist.pdf" aria-label="Download Mechanical datasheet quality checklist as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Pumps" data-title="how epc engineers manage interfaces"><div class="article-meta"><span>Pumps</span><span>9 min</span></div><h3>How EPC engineers manage interfaces</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/how-epc-engineers-manage-interfaces.pdf" download="how-epc-engineers-manage-interfaces.pdf" aria-label="Download How EPC engineers manage interfaces as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Compressors" data-title="rotating equipment interview questions"><div class="article-meta"><span>Compressors</span><span>10 min</span></div><h3>Rotating equipment interview questions</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/rotating-equipment-interview-questions.pdf" download="rotating-equipment-interview-questions.pdf" aria-label="Download Rotating equipment interview questions as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Turbines" data-title="how to write an engineering resume"><div class="article-meta"><span>Turbines</span><span>11 min</span></div><h3>How to write an engineering resume</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/how-to-write-an-engineering-resume.pdf" download="how-to-write-an-engineering-resume.pdf" aria-label="Download How to write an engineering resume as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Vibration Analysis" data-title="linkedin optimization for mechanical engineers"><div class="article-meta"><span>Vibration Analysis</span><span>12 min</span></div><h3>LinkedIn optimization for mechanical engineers</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/linkedin-optimization-for-mechanical-engineers.pdf" download="linkedin-optimization-for-mechanical-engineers.pdf" aria-label="Download LinkedIn optimization for mechanical engineers as PDF">Download PDF ↓</a></article><article class="card article-card" data-article data-category="Mechanical Seals" data-title="first 90 days as a rotating equipment engineer"><div class="article-meta"><span>Mechanical Seals</span><span>6 min</span></div><h3>First 90 days as a rotating equipment engineer</h3><p>Practical guidance, review logic and a clear engineering takeaway.</p><a class="text-link download-link" href="assets/documents/first-90-days-as-a-rotating-equipment-engineer.pdf" download="first-90-days-as-a-rotating-equipment-engineer.pdf" aria-label="Download First 90 days as a rotating equipment engineer as PDF">Download PDF ↓</a></article></div></div></section></main>
-<div class="document-modal" id="document-modal" hidden role="dialog" aria-modal="true" aria-labelledby="document-modal-title" aria-describedby="document-modal-message">
-  <div class="document-modal-backdrop" data-close-document-modal></div>
-  <div class="document-modal-card" role="document">
-    <div class="document-modal-icon" aria-hidden="true">i</div>
-    <h2 id="document-modal-title">Coming Soon</h2>
-    <p id="document-modal-message">The document is under preparation and will be available soon.</p>
-    <p class="document-modal-article" id="document-modal-article"></p>
-    <button class="document-modal-close" type="button" data-close-document-modal>Close</button>
-  </div>
-</div>
-<footer class="site-footer"><div class="container footer-grid"><div><h2>The EPC Engineer</h2><p>Practical rotating-equipment knowledge, technical consulting and career mentoring for engineers.</p><p class="social"><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a> · <a href="mailto:hello@theepcengineer.com">Email</a> · <a href="https://wa.me/" rel="noopener">WhatsApp</a></p></div><div><h3>Explore</h3><a href="knowledge-hub.html">Knowledge Hub</a><a href="resources.html">Free Resources</a><a href="case-studies.html">Case Studies</a></div><div><h3>Work with Gupta</h3><a href="booking.html">Book Consultation</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom">© <span id="year"></span> Gupta Sahu. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></div></footer><script src="assets/js/main.js" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const searchInput = document.getElementById('article-search');
-    const categorySelect = document.getElementById('article-category');
-    const articleGrid = document.getElementById('article-grid');
-    const status = document.getElementById('filter-status');
-    const articles = Array.from(document.querySelectorAll('[data-article]'));
-
-    const noResults = document.createElement('div');
-    noResults.className = 'no-results';
-    noResults.hidden = true;
-    noResults.textContent = 'No articles match your search. Try a different keyword or select All categories.';
-    articleGrid.appendChild(noResults);
-
-    function normalize(value) {
-      return String(value || '').toLowerCase().trim();
-    }
-
-    function filterArticles() {
-      const query = normalize(searchInput.value);
-      const selectedCategory = categorySelect.value;
-      let visibleCount = 0;
-
-      articles.forEach(function (article) {
-        const searchableText = normalize(article.textContent + ' ' + article.dataset.title);
-        const categoryMatches = selectedCategory === 'All' || article.dataset.category === selectedCategory;
-        const searchMatches = !query || searchableText.includes(query);
-        const showArticle = categoryMatches && searchMatches;
-
-        article.hidden = !showArticle;
-        if (showArticle) visibleCount += 1;
-      });
-
-      noResults.hidden = visibleCount !== 0;
-      status.textContent = visibleCount === articles.length
-        ? 'Showing all ' + articles.length + ' articles'
-        : 'Showing ' + visibleCount + ' of ' + articles.length + ' articles';
-    }
-
-    searchInput.addEventListener('input', filterArticles);
-    categorySelect.addEventListener('change', filterArticles);
-    filterArticles();
-  });
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  const modal=document.getElementById('document-modal');
-  const modalArticle=document.getElementById('document-modal-article');
-  const closeButton=modal.querySelector('.document-modal-close');
-  let lastFocused=null;
-  function openSoon(title){lastFocused=document.activeElement;modalArticle.textContent=title;modal.hidden=false;document.body.style.overflow='hidden';closeButton.focus()}
-  function closeSoon(){modal.hidden=true;document.body.style.overflow='';if(lastFocused)lastFocused.focus()}
-  document.querySelectorAll('[data-close-document-modal]').forEach(el=>el.addEventListener('click',closeSoon));
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)closeSoon()});
-  document.querySelectorAll('.download-link').forEach(link=>{
-    link.addEventListener('click',async function(e){
-      e.preventDefault();
-      const card=link.closest('[data-article]');
-      const title=card?.querySelector('h3')?.textContent.trim()||'Selected document';
-      const url=new URL(link.getAttribute('href'),window.location.href).href;
-      const original=link.textContent;
-      link.classList.add('is-checking');link.textContent='Checking...';
-      try{
-        const response=await fetch(url,{method:'HEAD',cache:'no-store'});
-        if(!response.ok){openSoon(title);return}
-        const a=document.createElement('a');a.href=url;a.download=link.getAttribute('download')||'';document.body.appendChild(a);a.click();a.remove();
-      }catch(error){openSoon(title)}finally{link.classList.remove('is-checking');link.textContent=original}
-    });
-  });
-});
-</script>
-</body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Knowledge Hub | The EPC Engineer</title><meta name="description" content="Practical rotating equipment, hazardous area classification, API standards and engineering career resources."><link rel="stylesheet" href="assets/css/style.css"><style>
+.knowledge-filters{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,340px);gap:14px;padding:16px;background:#f6f8fb;border-radius:16px;margin-bottom:16px}.knowledge-filters input,.knowledge-filters select{width:100%;height:54px;padding:12px 16px;border:1px solid #ccd5df;border-radius:12px;background:#fff;font:inherit}.filter-status{color:#64748b;margin:0 0 24px}.download-link{display:inline-flex;align-items:center;gap:6px}.download-link.is-checking{pointer-events:none;opacity:.65}.document-modal[hidden]{display:none!important}.document-modal{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:20px}.document-modal-backdrop{position:absolute;inset:0;background:rgba(8,42,73,.74);backdrop-filter:blur(4px)}.document-modal-card{position:relative;z-index:1;width:min(460px,100%);padding:32px;border-radius:22px;background:#fff;box-shadow:0 24px 70px rgba(8,42,73,.28);text-align:center}.document-modal-icon{display:grid;width:64px;height:64px;margin:0 auto 18px;place-items:center;border-radius:50%;background:#fff3e7;color:#cf7029;font-size:1.8rem;font-weight:900}.document-modal-card h2{margin:0;color:#0d3b66}.document-modal-card p{color:#64748b}.document-modal-article{font-weight:800;color:#172033!important}.document-modal-close{margin-top:18px;border:0;border-radius:10px;padding:12px 22px;background:#0d3b66;color:#fff;font:inherit;font-weight:800;cursor:pointer}.no-results{grid-column:1/-1;padding:30px;text-align:center;background:#f8fafc;border:1px dashed #b8c4d1;border-radius:16px}@media(max-width:720px){.knowledge-filters{grid-template-columns:1fr}}
+</style></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">EPC</span><span><strong>The EPC Engineer</strong><small>LEARN. GROW. SOLVE. SUCCEED.</small></span></a><button class="menu-btn" aria-expanded="false" aria-controls="main-nav">☰<span class="sr-only">Menu</span></button><nav id="main-nav" class="main-nav"><a class="nav-link" href="index.html">Home</a><a class="nav-link" href="about.html">About</a><a class="nav-link" href="services.html">Services</a><a class="nav-link active" href="knowledge-hub.html">Knowledge Hub</a><a class="nav-link" href="resources.html">Free Resources</a><a class="nav-link" href="case-studies.html">Case Studies</a><a class="nav-link" href="testimonials.html">Testimonials</a><a class="nav-link" href="contact.html">Contact</a><a class="btn btn-primary nav-cta" href="booking.html">Book Consultation</a></nav></div></header><main id="main"><section class="page-hero"><div class="container"><p class="eyebrow light">Knowledge Hub</p><h1>Rotating equipment knowledge you can use</h1><p class="hero-text">Practical articles for design, EPC review, hazardous area classification, reliability, maintenance and career development.</p></div></section><section class="section"><div class="container"><div class="knowledge-filters"><input id="article-search" type="search" placeholder="Type to search articles..." aria-label="Search articles" autocomplete="off"><select id="article-category" aria-label="Filter articles by category"><option value="All">All categories</option><option value="Pumps">Pumps</option><option value="Compressors">Compressors</option><option value="Turbines">Turbines</option><option value="Vibration Analysis">Vibration Analysis</option><option value="Mechanical Seals">Mechanical Seals</option><option value="Reliability Engineering">Reliability Engineering</option><option value="Maintenance Strategies">Maintenance Strategies</option><option value="API Standards">API Standards</option><option value="Engineering Careers">Engineering Careers</option><option value="Hazardous Area Classification">Hazardous Area Classification</option></select></div><p id="filter-status" class="filter-status" aria-live="polite">Showing all 51 articles</p><div class="grid grid-3" id="article-grid"><article class="card article-card" data-article data-category="Hazardous Area Classification" data-title="hazardous area classification: zone and division system">
+<div class="article-meta"><span>Hazardous Area Classification</span><span>30 min</span></div>
+<h3>Hazardous Area Classification: Zone and Division System</h3><p>A practical comparison of Zone and Division systems, gas and dust hazards, groups, temperature classes, equipment marking and selection considerations.</p>
+<a class="text-link download-link" href="assets/documents/hazardous-area-classification-zone-and-division-system.pdf" download="hazardous-area-classification-zone-and-division-system.pdf" aria-label="Download Hazardous Area Classification: Zone and Division System as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Pumps" data-title="api 610 centrifugal pump selection: a complete workflow">
+<div class="article-meta"><span>Pumps</span><span>1 hr</span></div>
+<h3>API 610 Centrifugal Pump Selection: A Complete Workflow</h3><p>Practical guidance on design data, pump type selection, operating range, NPSH, materials, driver sizing and vendor-offer review.</p>
+<a class="text-link download-link" href="assets/documents/api-610-centrifugal-pump-selection-a-complete-workflow.pdf" download="api-610-centrifugal-pump-selection-a-complete-workflow.pdf" aria-label="Download API 610 Centrifugal Pump Selection: A Complete Workflow as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Pumps" data-title="bep, por and aor explained">
+<div class="article-meta"><span>Pumps</span><span>7 min</span></div>
+<h3>BEP, POR and AOR Explained</h3><p>Understand Best Efficiency Point, Preferred Operating Region and Allowable Operating Region for centrifugal pumps.</p>
+<a class="text-link download-link" href="assets/documents/bep-por-and-aor-explained.pdf" download="bep-por-and-aor-explained.pdf" aria-label="Download BEP, POR and AOR Explained as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Pumps" data-title="system curves for practicing engineers">
+<div class="article-meta"><span>Pumps</span><span>8 min</span></div>
+<h3>System Curves for Practicing Engineers</h3><p>Build and interpret static-head and friction-loss system curves for pump selection.</p>
+<a class="text-link download-link" href="assets/documents/system-curves-for-practicing-engineers.pdf" download="system-curves-for-practicing-engineers.pdf" aria-label="Download System Curves for Practicing Engineers as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Pumps" data-title="npsha versus npshr with a worked example">
+<div class="article-meta"><span>Pumps</span><span>10 min</span></div>
+<h3>NPSHa versus NPSHr with a Worked Example</h3><p>A practical calculation and review method for suction-system adequacy and cavitation margin.</p>
+<a class="text-link download-link" href="assets/documents/npsha-versus-npshr-with-a-worked-example.pdf" download="npsha-versus-npshr-with-a-worked-example.pdf" aria-label="Download NPSHa versus NPSHr with a Worked Example as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Pumps" data-title="pump cavitation symptoms and prevention">
+<div class="article-meta"><span>Pumps</span><span>8 min</span></div>
+<h3>Pump Cavitation Symptoms and Prevention</h3><p>Recognize cavitation indicators and identify practical design and operating corrections.</p>
+<a class="text-link download-link" href="assets/documents/pump-cavitation-symptoms-and-prevention.pdf" download="pump-cavitation-symptoms-and-prevention.pdf" aria-label="Download Pump Cavitation Symptoms and Prevention as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Pumps" data-title="minimum continuous stable flow explained">
+<div class="article-meta"><span>Pumps</span><span>8 min</span></div>
+<h3>Minimum Continuous Stable Flow Explained</h3><p>Understand minimum-flow limits, recirculation risks and protection philosophy.</p>
+<a class="text-link download-link" href="assets/documents/minimum-continuous-stable-flow-explained.pdf" download="minimum-continuous-stable-flow-explained.pdf" aria-label="Download Minimum Continuous Stable Flow Explained as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Pumps" data-title="pump shutoff head and driver checks">
+<div class="article-meta"><span>Pumps</span><span>9 min</span></div>
+<h3>Pump Shutoff Head and Driver Checks</h3><p>Review shutoff pressure, system design pressure, power and driver rating.</p>
+<a class="text-link download-link" href="assets/documents/pump-shutoff-head-and-driver-checks.pdf" download="pump-shutoff-head-and-driver-checks.pdf" aria-label="Download Pump Shutoff Head and Driver Checks as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Pumps" data-title="parallel and series pump operation">
+<div class="article-meta"><span>Pumps</span><span>9 min</span></div>
+<h3>Parallel and Series Pump Operation</h3><p>Understand combined curves, load sharing and operating limitations.</p>
+<a class="text-link download-link" href="assets/documents/parallel-and-series-pump-operation.pdf" download="parallel-and-series-pump-operation.pdf" aria-label="Download Parallel and Series Pump Operation as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Pumps" data-title="pump recirculation and low-flow damage">
+<div class="article-meta"><span>Pumps</span><span>8 min</span></div>
+<h3>Pump Recirculation and Low-Flow Damage</h3><p>Identify internal recirculation, heating, vibration and reliability risks.</p>
+<a class="text-link download-link" href="assets/documents/pump-recirculation-and-low-flow-damage.pdf" download="pump-recirculation-and-low-flow-damage.pdf" aria-label="Download Pump Recirculation and Low-Flow Damage as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="API Standards" data-title="api 610 datasheet review checklist">
+<div class="article-meta"><span>API Standards</span><span>12 min</span></div>
+<h3>API 610 Datasheet Review Checklist</h3><p>A structured EPC review checklist for centrifugal pump datasheets.</p>
+<a class="text-link download-link" href="assets/documents/api-610-datasheet-review-checklist.pdf" download="api-610-datasheet-review-checklist.pdf" aria-label="Download API 610 Datasheet Review Checklist as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Compressors" data-title="centrifugal compressor fundamentals">
+<div class="article-meta"><span>Compressors</span><span>10 min</span></div>
+<h3>Centrifugal Compressor Fundamentals</h3><p>A beginner-friendly overview of head, pressure ratio, efficiency and operating maps.</p>
+<a class="text-link download-link" href="assets/documents/centrifugal-compressor-fundamentals.pdf" download="centrifugal-compressor-fundamentals.pdf" aria-label="Download Centrifugal Compressor Fundamentals as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Compressors" data-title="compressor maps and surge explained">
+<div class="article-meta"><span>Compressors</span><span>10 min</span></div>
+<h3>Compressor Maps and Surge Explained</h3><p>Read compressor maps and understand surge, choke and control margins.</p>
+<a class="text-link download-link" href="assets/documents/compressor-maps-and-surge-explained.pdf" download="compressor-maps-and-surge-explained.pdf" aria-label="Download Compressor Maps and Surge Explained as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Compressors" data-title="anti-surge control philosophy">
+<div class="article-meta"><span>Compressors</span><span>12 min</span></div>
+<h3>Anti-Surge Control Philosophy</h3><p>Understand recycle valves, control lines, response time and instrumentation.</p>
+<a class="text-link download-link" href="assets/documents/anti-surge-control-philosophy.pdf" download="anti-surge-control-philosophy.pdf" aria-label="Download Anti-Surge Control Philosophy as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Compressors" data-title="polytropic head in simple terms">
+<div class="article-meta"><span>Compressors</span><span>9 min</span></div>
+<h3>Polytropic Head in Simple Terms</h3><p>Connect thermodynamics with practical compressor performance.</p>
+<a class="text-link download-link" href="assets/documents/polytropic-head-in-simple-terms.pdf" download="polytropic-head-in-simple-terms.pdf" aria-label="Download Polytropic Head in Simple Terms as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Compressors" data-title="compressor performance test review">
+<div class="article-meta"><span>Compressors</span><span>12 min</span></div>
+<h3>Compressor Performance Test Review</h3><p>Review test conditions, corrections, tolerances and acceptance criteria.</p>
+<a class="text-link download-link" href="assets/documents/compressor-performance-test-review.pdf" download="compressor-performance-test-review.pdf" aria-label="Download Compressor Performance Test Review as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Mechanical Seals" data-title="dry gas seal basics">
+<div class="article-meta"><span>Mechanical Seals</span><span>9 min</span></div>
+<h3>Dry Gas Seal Basics</h3><p>Understand seal stages, separation gas, leakage monitoring and reliability.</p>
+<a class="text-link download-link" href="assets/documents/dry-gas-seal-basics.pdf" download="dry-gas-seal-basics.pdf" aria-label="Download Dry Gas Seal Basics as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Compressors" data-title="compressor fouling and performance loss">
+<div class="article-meta"><span>Compressors</span><span>8 min</span></div>
+<h3>Compressor Fouling and Performance Loss</h3><p>Recognize symptoms and evaluate cleaning and operating actions.</p>
+<a class="text-link download-link" href="assets/documents/compressor-fouling-and-performance-loss.pdf" download="compressor-fouling-and-performance-loss.pdf" aria-label="Download Compressor Fouling and Performance Loss as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Compressors" data-title="reciprocating versus centrifugal compressors">
+<div class="article-meta"><span>Compressors</span><span>10 min</span></div>
+<h3>Reciprocating versus Centrifugal Compressors</h3><p>Compare selection ranges, turndown, pulsation and maintenance needs.</p>
+<a class="text-link download-link" href="assets/documents/reciprocating-versus-centrifugal-compressors.pdf" download="reciprocating-versus-centrifugal-compressors.pdf" aria-label="Download Reciprocating versus Centrifugal Compressors as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Vibration Analysis" data-title="compressor vibration troubleshooting">
+<div class="article-meta"><span>Vibration Analysis</span><span>12 min</span></div>
+<h3>Compressor Vibration Troubleshooting</h3><p>A structured workflow from symptoms to likely mechanical and process causes.</p>
+<a class="text-link download-link" href="assets/documents/compressor-vibration-troubleshooting.pdf" download="compressor-vibration-troubleshooting.pdf" aria-label="Download Compressor Vibration Troubleshooting as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="API Standards" data-title="api 617 vendor review checklist">
+<div class="article-meta"><span>API Standards</span><span>14 min</span></div>
+<h3>API 617 Vendor Review Checklist</h3><p>Key technical checks for centrifugal and axial compressor packages.</p>
+<a class="text-link download-link" href="assets/documents/api-617-vendor-review-checklist.pdf" download="api-617-vendor-review-checklist.pdf" aria-label="Download API 617 Vendor Review Checklist as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Turbines" data-title="steam turbine fundamentals">
+<div class="article-meta"><span>Turbines</span><span>10 min</span></div>
+<h3>Steam Turbine Fundamentals</h3><p>Understand stages, governing, steam conditions and mechanical arrangements.</p>
+<a class="text-link download-link" href="assets/documents/steam-turbine-fundamentals.pdf" download="steam-turbine-fundamentals.pdf" aria-label="Download Steam Turbine Fundamentals as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Turbines" data-title="turbine overspeed protection">
+<div class="article-meta"><span>Turbines</span><span>9 min</span></div>
+<h3>Turbine Overspeed Protection</h3><p>Review trip philosophy, testing and independent protection layers.</p>
+<a class="text-link download-link" href="assets/documents/turbine-overspeed-protection.pdf" download="turbine-overspeed-protection.pdf" aria-label="Download Turbine Overspeed Protection as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Mechanical Seals" data-title="mechanical seal failure modes">
+<div class="article-meta"><span>Mechanical Seals</span><span>10 min</span></div>
+<h3>Mechanical Seal Failure Modes</h3><p>Identify common leakage, face damage, heat and contamination mechanisms.</p>
+<a class="text-link download-link" href="assets/documents/mechanical-seal-failure-modes.pdf" download="mechanical-seal-failure-modes.pdf" aria-label="Download Mechanical Seal Failure Modes as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Mechanical Seals" data-title="seal flush plans explained">
+<div class="article-meta"><span>Mechanical Seals</span><span>12 min</span></div>
+<h3>Seal Flush Plans Explained</h3><p>Understand common API seal plans and their applications.</p>
+<a class="text-link download-link" href="assets/documents/seal-flush-plans-explained.pdf" download="seal-flush-plans-explained.pdf" aria-label="Download Seal Flush Plans Explained as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="API Standards" data-title="api 682 plan selection guide">
+<div class="article-meta"><span>API Standards</span><span>14 min</span></div>
+<h3>API 682 Plan Selection Guide</h3><p>A practical approach to selecting mechanical seal arrangements and piping plans.</p>
+<a class="text-link download-link" href="assets/documents/api-682-plan-selection-guide.pdf" download="api-682-plan-selection-guide.pdf" aria-label="Download API 682 Plan Selection Guide as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Reliability Engineering" data-title="bearing failure pattern guide">
+<div class="article-meta"><span>Reliability Engineering</span><span>10 min</span></div>
+<h3>Bearing Failure Pattern Guide</h3><p>Connect visible damage patterns with lubrication, loading and installation causes.</p>
+<a class="text-link download-link" href="assets/documents/bearing-failure-pattern-guide.pdf" download="bearing-failure-pattern-guide.pdf" aria-label="Download Bearing Failure Pattern Guide as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Maintenance Strategies" data-title="shaft alignment best practices">
+<div class="article-meta"><span>Maintenance Strategies</span><span>10 min</span></div>
+<h3>Shaft Alignment Best Practices</h3><p>Practical alignment tolerances, thermal growth and verification steps.</p>
+<a class="text-link download-link" href="assets/documents/shaft-alignment-best-practices.pdf" download="shaft-alignment-best-practices.pdf" aria-label="Download Shaft Alignment Best Practices as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Maintenance Strategies" data-title="soft foot diagnosis">
+<div class="article-meta"><span>Maintenance Strategies</span><span>8 min</span></div>
+<h3>Soft Foot Diagnosis</h3><p>Identify parallel, angular and induced soft foot before machine alignment.</p>
+<a class="text-link download-link" href="assets/documents/soft-foot-diagnosis.pdf" download="soft-foot-diagnosis.pdf" aria-label="Download Soft Foot Diagnosis as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Vibration Analysis" data-title="rotor balancing fundamentals">
+<div class="article-meta"><span>Vibration Analysis</span><span>9 min</span></div>
+<h3>Rotor Balancing Fundamentals</h3><p>Understand unbalance, correction planes and acceptance criteria.</p>
+<a class="text-link download-link" href="assets/documents/rotor-balancing-fundamentals.pdf" download="rotor-balancing-fundamentals.pdf" aria-label="Download Rotor Balancing Fundamentals as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Vibration Analysis" data-title="vibration spectrum reading for beginners">
+<div class="article-meta"><span>Vibration Analysis</span><span>12 min</span></div>
+<h3>Vibration Spectrum Reading for Beginners</h3><p>Learn frequency, amplitude, harmonics and practical pattern recognition.</p>
+<a class="text-link download-link" href="assets/documents/vibration-spectrum-reading-for-beginners.pdf" download="vibration-spectrum-reading-for-beginners.pdf" aria-label="Download Vibration Spectrum Reading for Beginners as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Vibration Analysis" data-title="1x, 2x and harmonics explained">
+<div class="article-meta"><span>Vibration Analysis</span><span>9 min</span></div>
+<h3>1X, 2X and Harmonics Explained</h3><p>Relate common spectral components to likely machinery conditions.</p>
+<a class="text-link download-link" href="assets/documents/1x-2x-and-harmonics-explained.pdf" download="1x-2x-and-harmonics-explained.pdf" aria-label="Download 1X, 2X and Harmonics Explained as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Vibration Analysis" data-title="resonance identification in rotating equipment">
+<div class="article-meta"><span>Vibration Analysis</span><span>11 min</span></div>
+<h3>Resonance Identification in Rotating Equipment</h3><p>Recognize resonance and plan confirmation testing and corrective actions.</p>
+<a class="text-link download-link" href="assets/documents/resonance-identification-in-rotating-equipment.pdf" download="resonance-identification-in-rotating-equipment.pdf" aria-label="Download Resonance Identification in Rotating Equipment as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Reliability Engineering" data-title="reliability-centered maintenance basics">
+<div class="article-meta"><span>Reliability Engineering</span><span>12 min</span></div>
+<h3>Reliability-Centered Maintenance Basics</h3><p>Apply functional-failure and consequence logic to maintenance decisions.</p>
+<a class="text-link download-link" href="assets/documents/reliability-centered-maintenance-basics.pdf" download="reliability-centered-maintenance-basics.pdf" aria-label="Download Reliability-Centered Maintenance Basics as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Maintenance Strategies" data-title="preventive versus predictive maintenance">
+<div class="article-meta"><span>Maintenance Strategies</span><span>9 min</span></div>
+<h3>Preventive versus Predictive Maintenance</h3><p>Select the right maintenance strategy using failure behavior and criticality.</p>
+<a class="text-link download-link" href="assets/documents/preventive-versus-predictive-maintenance.pdf" download="preventive-versus-predictive-maintenance.pdf" aria-label="Download Preventive versus Predictive Maintenance as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Reliability Engineering" data-title="criticality ranking for rotating assets">
+<div class="article-meta"><span>Reliability Engineering</span><span>10 min</span></div>
+<h3>Criticality Ranking for Rotating Assets</h3><p>Build a practical risk-based ranking for equipment maintenance priorities.</p>
+<a class="text-link download-link" href="assets/documents/criticality-ranking-for-rotating-assets.pdf" download="criticality-ranking-for-rotating-assets.pdf" aria-label="Download Criticality Ranking for Rotating Assets as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Reliability Engineering" data-title="root cause analysis for equipment failures">
+<div class="article-meta"><span>Reliability Engineering</span><span>12 min</span></div>
+<h3>Root Cause Analysis for Equipment Failures</h3><p>Use evidence, timelines and causal logic to prevent recurrence.</p>
+<a class="text-link download-link" href="assets/documents/root-cause-analysis-for-equipment-failures.pdf" download="root-cause-analysis-for-equipment-failures.pdf" aria-label="Download Root Cause Analysis for Equipment Failures as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Reliability Engineering" data-title="bad actor management program">
+<div class="article-meta"><span>Reliability Engineering</span><span>10 min</span></div>
+<h3>Bad Actor Management Program</h3><p>Create a repeatable process for identifying and eliminating chronic losses.</p>
+<a class="text-link download-link" href="assets/documents/bad-actor-management-program.pdf" download="bad-actor-management-program.pdf" aria-label="Download Bad Actor Management Program as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Maintenance Strategies" data-title="lubrication contamination control">
+<div class="article-meta"><span>Maintenance Strategies</span><span>9 min</span></div>
+<h3>Lubrication Contamination Control</h3><p>Control particles, water and cross-contamination in machinery lubricants.</p>
+<a class="text-link download-link" href="assets/documents/lubrication-contamination-control.pdf" download="lubrication-contamination-control.pdf" aria-label="Download Lubrication Contamination Control as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Reliability Engineering" data-title="condition monitoring program roadmap">
+<div class="article-meta"><span>Reliability Engineering</span><span>12 min</span></div>
+<h3>Condition Monitoring Program Roadmap</h3><p>Define assets, technologies, routes, alarm limits and response workflows.</p>
+<a class="text-link download-link" href="assets/documents/condition-monitoring-program-roadmap.pdf" download="condition-monitoring-program-roadmap.pdf" aria-label="Download Condition Monitoring Program Roadmap as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Maintenance Strategies" data-title="maintenance kpi selection">
+<div class="article-meta"><span>Maintenance Strategies</span><span>9 min</span></div>
+<h3>Maintenance KPI Selection</h3><p>Use availability, MTBF, MTTR and work-management indicators correctly.</p>
+<a class="text-link download-link" href="assets/documents/maintenance-kpi-selection.pdf" download="maintenance-kpi-selection.pdf" aria-label="Download Maintenance KPI Selection as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="API Standards" data-title="api 610 versus iso 5199">
+<div class="article-meta"><span>API Standards</span><span>11 min</span></div>
+<h3>API 610 versus ISO 5199</h3><p>Compare scope, construction philosophy and typical applications.</p>
+<a class="text-link download-link" href="assets/documents/api-610-versus-iso-5199.pdf" download="api-610-versus-iso-5199.pdf" aria-label="Download API 610 versus ISO 5199 as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="API Standards" data-title="api 670 machinery protection overview">
+<div class="article-meta"><span>API Standards</span><span>12 min</span></div>
+<h3>API 670 Machinery Protection Overview</h3><p>Understand sensors, voting, alarms, trips and protection-system architecture.</p>
+<a class="text-link download-link" href="assets/documents/api-670-machinery-protection-overview.pdf" download="api-670-machinery-protection-overview.pdf" aria-label="Download API 670 Machinery Protection Overview as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Engineering Careers" data-title="how to review a vendor deviation list">
+<div class="article-meta"><span>Engineering Careers</span><span>10 min</span></div>
+<h3>How to Review a Vendor Deviation List</h3><p>A traceable method for identifying technical and commercial impact.</p>
+<a class="text-link download-link" href="assets/documents/how-to-review-a-vendor-deviation-list.pdf" download="how-to-review-a-vendor-deviation-list.pdf" aria-label="Download How to Review a Vendor Deviation List as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Engineering Careers" data-title="technical bid evaluation step by step">
+<div class="article-meta"><span>Engineering Careers</span><span>12 min</span></div>
+<h3>Technical Bid Evaluation Step by Step</h3><p>Structure requirements, deviations, clarifications and recommendations.</p>
+<a class="text-link download-link" href="assets/documents/technical-bid-evaluation-step-by-step.pdf" download="technical-bid-evaluation-step-by-step.pdf" aria-label="Download Technical Bid Evaluation Step by Step as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Engineering Careers" data-title="mechanical datasheet quality checklist">
+<div class="article-meta"><span>Engineering Careers</span><span>9 min</span></div>
+<h3>Mechanical Datasheet Quality Checklist</h3><p>Improve data completeness, consistency and interdisciplinary alignment.</p>
+<a class="text-link download-link" href="assets/documents/mechanical-datasheet-quality-checklist.pdf" download="mechanical-datasheet-quality-checklist.pdf" aria-label="Download Mechanical Datasheet Quality Checklist as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Engineering Careers" data-title="how epc engineers manage interfaces">
+<div class="article-meta"><span>Engineering Careers</span><span>10 min</span></div>
+<h3>How EPC Engineers Manage Interfaces</h3><p>Coordinate process, piping, civil, electrical, instrumentation and vendors.</p>
+<a class="text-link download-link" href="assets/documents/how-epc-engineers-manage-interfaces.pdf" download="how-epc-engineers-manage-interfaces.pdf" aria-label="Download How EPC Engineers Manage Interfaces as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Engineering Careers" data-title="rotating equipment interview questions">
+<div class="article-meta"><span>Engineering Careers</span><span>12 min</span></div>
+<h3>Rotating Equipment Interview Questions</h3><p>Prepare technical and scenario-based answers for engineering interviews.</p>
+<a class="text-link download-link" href="assets/documents/rotating-equipment-interview-questions.pdf" download="rotating-equipment-interview-questions.pdf" aria-label="Download Rotating Equipment Interview Questions as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Engineering Careers" data-title="how to write an engineering resume">
+<div class="article-meta"><span>Engineering Careers</span><span>10 min</span></div>
+<h3>How to Write an Engineering Resume</h3><p>Present scope, technical depth and measurable project contribution.</p>
+<a class="text-link download-link" href="assets/documents/how-to-write-an-engineering-resume.pdf" download="how-to-write-an-engineering-resume.pdf" aria-label="Download How to Write an Engineering Resume as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Engineering Careers" data-title="linkedin optimization for mechanical engineers">
+<div class="article-meta"><span>Engineering Careers</span><span>9 min</span></div>
+<h3>LinkedIn Optimization for Mechanical Engineers</h3><p>Improve headline, summary, keywords and project positioning.</p>
+<a class="text-link download-link" href="assets/documents/linkedin-optimization-for-mechanical-engineers.pdf" download="linkedin-optimization-for-mechanical-engineers.pdf" aria-label="Download LinkedIn Optimization for Mechanical Engineers as PDF">Download PDF ↓</a>
+</article>
+<article class="card article-card" data-article data-category="Engineering Careers" data-title="first 90 days as a rotating equipment engineer">
+<div class="article-meta"><span>Engineering Careers</span><span>10 min</span></div>
+<h3>First 90 Days as a Rotating Equipment Engineer</h3><p>A practical learning and execution plan for a new role.</p>
+<a class="text-link download-link" href="assets/documents/first-90-days-as-a-rotating-equipment-engineer.pdf" download="first-90-days-as-a-rotating-equipment-engineer.pdf" aria-label="Download First 90 Days as a Rotating Equipment Engineer as PDF">Download PDF ↓</a>
+</article></div></div></section></main>
+<div class="document-modal" id="document-modal" hidden role="dialog" aria-modal="true" aria-labelledby="document-modal-title"><div class="document-modal-backdrop" data-close-modal></div><div class="document-modal-card"><div class="document-modal-icon">i</div><h2 id="document-modal-title">Coming Soon</h2><p>The document is under preparation and will be available soon.</p><p class="document-modal-article" id="document-modal-article"></p><button class="document-modal-close" type="button" data-close-modal>Close</button></div></div>
+<footer class="site-footer"><div class="container footer-grid"><div><h2>The EPC Engineer</h2><p>Practical rotating-equipment knowledge, technical consulting and career mentoring for engineers.</p><p class="social"><a href="https://www.linkedin.com/in/gupta-sahu">LinkedIn</a> · <a href="mailto:theepcengineer@gmail.com">Email</a> · <a href="https://wa.me/918260664742" rel="noopener">WhatsApp</a></p></div><div><h3>Explore</h3><a href="knowledge-hub.html">Knowledge Hub</a><a href="resources.html">Free Resources</a><a href="case-studies.html">Case Studies</a></div><div><h3>Work with Gupta</h3><a href="booking.html">Book Consultation</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom">© <span id="year"></span> Gupta Sahu. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></div></footer><script src="assets/js/main.js" defer></script><script>
+document.addEventListener('DOMContentLoaded',()=>{const q=document.getElementById('article-search'),c=document.getElementById('article-category'),status=document.getElementById('filter-status'),grid=document.getElementById('article-grid'),articles=[...document.querySelectorAll('[data-article]')],modal=document.getElementById('document-modal'),modalArticle=document.getElementById('document-modal-article');const no=document.createElement('div');no.className='no-results';no.hidden=true;no.textContent='No articles match your search.';grid.appendChild(no);function filter(){let n=0;const query=q.value.toLowerCase().trim();articles.forEach(a=>{const show=(c.value==='All'||a.dataset.category===c.value)&&(!query||a.textContent.toLowerCase().includes(query));a.hidden=!show;if(show)n++});no.hidden=n!==0;status.textContent=`Showing ${n} of ${articles.length} articles`}q.addEventListener('input',filter);c.addEventListener('change',filter);filter();function close(){modal.hidden=true;document.body.style.overflow=''}document.querySelectorAll('[data-close-modal]').forEach(x=>x.addEventListener('click',close));document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});document.querySelectorAll('.download-link').forEach(link=>link.addEventListener('click',async e=>{e.preventDefault();const title=link.closest('[data-article]').querySelector('h3').textContent;const url=new URL(link.href);const old=link.textContent;link.textContent='Checking...';link.classList.add('is-checking');try{const r=await fetch(url,{method:'HEAD',cache:'no-store'});if(!r.ok)throw new Error();const a=document.createElement('a');a.href=url;a.download=link.download;document.body.appendChild(a);a.click();a.remove()}catch{modalArticle.textContent=title;modal.hidden=false;document.body.style.overflow='hidden'}finally{link.textContent=old;link.classList.remove('is-checking')}}));});
+</script></body></html>
