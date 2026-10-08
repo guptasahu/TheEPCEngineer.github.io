@@ -10,7 +10,7 @@ function evaluate(d){
  const derivedFlammable=flash!==null&&(flash<=54||tmax>=flash-8);
  const flammable=declaredFlam==='flammable'||derivedFlammable;
  const nonFlammable=declaredFlam==='nonflammable'&&!derivedFlammable;
- const revisionUncertain=revision!=='2021';
+ const revisionUncertain=false;
  const aromaticTrigger=gasoline==='no'&&aromatics>25;
  const benzeneTrigger=(gasoline==='no'&&benzene>1)||(gasoline==='yes'&&benzene>5);
  const h2sTrigger=service!=='lean_amine'&&h2s>500;
@@ -19,7 +19,7 @@ function evaluate(d){
  const licensorTrigger=['sealless','arr3'].includes(d.get('licensor'));
  const automaticChemical=['acid','caustic','hypo'].includes(service);
  const consequence=['personnel','environment','fire'].includes(d.get('leak'));
- const unknownHazard=d.get('projectClass')==='unknown'||d.get('toxicity')==='unknown'||d.get('leak')==='unknown'||d.get('api682')==='unknown'||d.get('licensor')==='unknown'||declaredFlam==='unknown'||revisionUncertain;
+ const unknownHazard=d.get('projectClass')==='unknown'||d.get('toxicity')==='unknown'||d.get('leak')==='unknown'||d.get('api682')==='unknown'||d.get('licensor')==='unknown'||declaredFlam==='unknown';
  const confirmedHazard=d.get('projectClass')==='confirmed'||automaticChemical||aromaticTrigger||benzeneTrigger||h2sTrigger||autoIgnitionTrigger||api682Trigger||licensorTrigger||consequence;
  let hazard=confirmedHazard?'confirmed':(d.get('projectClass')==='potential'||d.get('toxicity')==='toxic'||unknownHazard?'potential':'normal');
  const verticalBlocked=has(d,'horizontalProhibited')||has(d,'spaceLimited');
@@ -27,7 +27,7 @@ function evaluate(d){
  const hydrocarbonAsme=pd<=1900&&ps<=520&&tmin>=0&&tmax<=65&&vp<172&&power<=112;
  const apiRequired=has(d,'betweenBearing')||(service==='hydrocarbon'?!hydrocarbonAsme:!generalAsme);
  let family='',type='',standard='',basis=[],checks=[],warnings=[];
- if(revisionUncertain) warnings.push('The 12 January 2021 revision is not confirmed. Revalidate all limits against the project-controlled SAES-G-005 revision.');
+
  if(declaredFlam==='nonflammable'&&derivedFlammable) warnings.push('The declared non-flammable status conflicts with the flash-point/temperature screening. Treat the liquid as flammable until Process/HSE confirms otherwise.');
  // Hydraulic arrangement first: storm water is always vertical; oily-water self-priming is a dedicated exception.
  if(service==='storm'){
