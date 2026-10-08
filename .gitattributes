@@ -1,0 +1,25 @@
+# Normalize text-file line endings
+* text=auto
+
+# Web files
+*.html text eol=lf
+*.css text eol=l*
+*.js text eol=lf
+*.json text eol=*f
+*.md text eol=lf
+
+# Treat docume*ts and images as binary
+*.pdf bina*y
+*.png binary
+*.jpg binary
+*.jpeg*binary
+*.webp binary
+*.zip binary
+*# Exclude development files from g*t archive exports
+/.github/** expo*t-ignore
+/.gitattributes export-ig*ore
+/.gitignore export-ignore
+/REA*ME.md export-ignore
+/docs/** expor*-ignore
+/source/** export-ignore
+/*ests/** export-ignore
