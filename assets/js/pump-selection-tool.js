@@ -1,1 +1,88 @@
-document.addEventListener('DOMContentLoaded',()=>{const form=document.getElementById('selector-form'),res=document.getElementById('result'),ph=document.getElementById('placeholder');const n=(d,k)=>Number(d.get(k)||0),b=(d,k)=>d.get(k)==='on',esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));function analyze(d){const service=d.get('service'),installation=d.get('installation'),project=d.get('projectClass'),tox=d.get('toxicity'),leak=d.get('leakConsequence'),h2s=n(d,'h2s'),tmax=n(d,'tmax'),aitRaw=d.get('ait'),ait=aitRaw===''?null:Number(aitRaw),P=n(d,'power'),pd=n(d,'pd'),ps=n(d,'ps'),tmin=n(d,'tmin'),vp=n(d,'vp'),solids=n(d,'solids'),visc=n(d,'viscosity'),particles=n(d,'particleSize');const automatic=['acid','caustic','hypo','rich_amine'].includes(service),autoIgnition=ait!==null&&Number.isFinite(ait)&&tmax>=ait,unknown=project==='unknown'||tox==='unknown'||leak==='unknown'||(service==='hydrocarbon'&&d.get('waterContent')==='unknown'),consequence=['personnel','environment','fire'].includes(leak);let dClass='normal';if(project==='confirmed'||automatic||h2s>=500||autoIgnition||consequence)dClass='confirmed';else if(project==='potential'||tox==='toxic'||unknown)dClass='potential';const obstacles=[];if(P>225)obstacles.push('estimated driver exceeds 225 kW');if(solids>0.25)obstacles.push('suspended solids exceed 0.25 wt%');if(visc<0.3||visc>200)obstacles.push('viscosity is outside 0.3–200 cP');if(b(d,'magneticParticles')&&!b(d,'magneticControl'))obstacles.push('magnetic particles are present without a stated control');if(b(d,'crystallizing'))obstacles.push('fluid may crystallize, polymerize or solidify');if(b(d,'poorLubricity'))obstacles.push('poor lubricity or dry-running risk is identified');if(particles>250&&!b(d,'cleanFlush'))obstacles.push('large particles are entered without clean flush/filtration');const sealless=dClass==='confirmed'&&obstacles.length===0;const vertical=b(d,'horizontalProhibited')||b(d,'spaceLimited'),api=pd>1900||ps>520||tmin<0||tmax>120||vp>=205||P>112||b(d,'betweenBearing');let family,type,standard,basis=[],checks=[],flags=[];if(dClass==='potential'){family='Specialist review required before pump standard selection';type='Do not finalize sealed versus sealless arrangement';standard='Apply normal Appendix A branch provisionally, then confirm Appendix D classification';basis.push('One or more inputs are toxic, potentially hazardous or unknown, but do not support an automatic final classification.');flags.push('Process, HSE, Materials and Rotating Equipment shall confirm the Appendix D classification.');}else if(service==='firewater'){family='Main firewater pump';type=vertical?'Vertical suspended firewater pump':'Horizontal firewater pump';standard='NFPA 20 plus applicable project firewater requirements';basis.push('Firewater service governs ahead of process-pump logic.');}else if(installation==='open_sump'||['storm','oily_sump'].includes(service)){const flammable=service==='hydrocarbon'||leak==='fire';const self=!flammable&&n(d,'lift')<=6&&b(d,'selfPriming')&&P<=112;if(self){family='Open-sump pump';type='Horizontal direct-drive self-priming pump';standard='Vendor standard plus SAES-G-005 self-priming requirements';}else{family='Open-sump pump';type='Vertical suspended discharge-through-column pump, typically VS1/VS2';standard=api||flammable?'API 610 / 31-SAMSS-004':'Project-approved vendor standard plus SAES-G-005';}}else if(dClass==='confirmed'){family='Appendix D highly hazardous liquid pump';if(sealless){type=vertical?'Vertical in-line sealless/canned-motor pump':'Horizontal sealless pump, canned motor or magnetic drive';standard=api?'API 685 / 31-SAMSS-685':'ASME B73.3 or ISO 15783';basis.push('The service screens as highly hazardous and no entered condition precludes preliminary sealless selection.');}else{type='API process pump with dual pressurized mechanical seals, Arrangement 3';standard='API 610 / 31-SAMSS-004 plus API 682 / 31-SAMSS-012';basis.push('The service screens as highly hazardous, but sealless feasibility has one or more obstacles.');flags.push('Sealless obstacles: '+obstacles.join('; ')+'.');}}else if(service==='jockey'){family='Firewater jockey pump';type=vertical?'Vertical in-line/suspended jockey pump':'Horizontal end-suction jockey pump';standard=vertical?'ASME B73.2 or ISO 5199':'ASME B73.1 or ISO 2858 + ISO 5199';}else if(service==='sewage'&&P<=37){family='Domestic sewage/community-water pump';type='Manufacturer-standard centrifugal/sewage pump';standard='Manufacturer standard within scope exception';}else if(api){family='General process centrifugal pump';type=vertical?'Vertical API process pump':b(d,'betweenBearing')?'Between-bearing API pump':'Horizontal API process pump';standard='API 610 / 31-SAMSS-004';basis.push('At least one Appendix A API escalation threshold is exceeded.');}else{family='General process centrifugal pump';type=vertical?'Vertical in-line process pump':'Horizontal end-suction process pump';standard=vertical?'ASME B73.2 or ISO 5199':'ASME B73.1 or ISO 2858 + ISO 5199';basis.push('Entered limits remain within the preliminary ASME/ISO branch.');}checks.push('Confirm normal and rated duty relative to BEP, POR and AOR.','Verify NPSHA at minimum suction pressure and maximum vapor pressure.','Complete materials, corrosion, seal plan, dry-running and secondary-containment review.');if(d.get('waterContent')==='wet')checks.push('Wet-hydrocarbon input recorded: perform corrosion, sour-service and metallurgy review.');if(b(d,'corrosiveUnknown'))flags.push('Material compatibility is not confirmed. Do not issue a final selection.');if(b(d,'parallel'))checks.push('For parallel operation, verify matched head curves and adequate rise to shutoff.');if(b(d,'variableDuty'))checks.push('Evaluate variable speed or multiple-pump duty splitting.');return{dClass,family,type,standard,basis,checks,flags,obstacles,sealless};}function render(r){const cls=r.dClass==='confirmed'?'confirmed':r.dClass==='potential'?'potential':'normal',label=r.dClass==='confirmed'?'Appendix D screening: highly hazardous':r.dClass==='potential'?'Appendix D screening: potentially highly hazardous':'Appendix D screening: no high-hazard trigger entered';res.innerHTML=`<p class="kicker">Preliminary recommendation</p><div class="status ${cls}">${esc(label)}</div><h2>${esc(r.family)}</h2><div class="decision"><span>Recommended arrangement</span><strong>${esc(r.type)}</strong></div><div class="standard">Governing standard<br><strong>${esc(r.standard)}</strong></div><div class="section-result"><h3>Selection basis</h3><ul>${r.basis.map(x=>`<li>${esc(x)}</li>`).join('')||'<li>Service-specific Appendix A branch applied.</li>'}</ul></div><div class="section-result"><h3>Mandatory next checks</h3><ul>${r.checks.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>${r.flags.map(x=>`<div class="flag">${esc(x)}</div>`).join('')}<button class="print" onclick="window.print()" type="button">Print / Save report</button>`;ph.hidden=true;res.hidden=false;}form.addEventListener('submit',e=>{e.preventDefault();render(analyze(new FormData(form)));res.scrollIntoView({behavior:'smooth',block:'start'})});form.addEventListener('reset',()=>setTimeout(()=>{res.hidden=true;ph.hidden=false},0));});
+document.addEventListener('DOMContentLoaded',()=>{
+const form=document.getElementById('selector-form'),res=document.getElementById('result'),ph=document.getElementById('placeholder');
+const number=(d,k)=>Number(d.get(k)||0), has=(d,k)=>d.get(k)==='on', optional=(d,k)=>d.get(k)===''?null:Number(d.get(k));
+const escapeHTML=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function evaluate(d){
+ const service=d.get('service'),installation=d.get('installation'),declaredFlam=d.get('flammability'),revision=d.get('revision');
+ const flow=number(d,'flow'),head=number(d,'head'),lift=number(d,'lift'),ps=number(d,'ps'),pd=number(d,'pd'),tmin=number(d,'tmin'),tmax=number(d,'tmax'),vp=number(d,'vp'),power=number(d,'power');
+ const flash=optional(d,'flashPoint'),gasoline=d.get('gasoline'),h2s=number(d,'h2s'),ait=optional(d,'ait'),solids=number(d,'solids'),viscosity=number(d,'viscosity'),aromatics=number(d,'aromatics'),benzene=number(d,'benzene');
+ const npsha120=optional(d,'npsha120'),npsh3Rated=optional(d,'npsh3Rated'),npsh3120=optional(d,'npsh3120');
+ const derivedFlammable=flash!==null&&(flash<=54||tmax>=flash-8);
+ const flammable=declaredFlam==='flammable'||derivedFlammable;
+ const nonFlammable=declaredFlam==='nonflammable'&&!derivedFlammable;
+ const revisionUncertain=revision!=='2021';
+ const aromaticTrigger=gasoline==='no'&&aromatics>25;
+ const benzeneTrigger=(gasoline==='no'&&benzene>1)||(gasoline==='yes'&&benzene>5);
+ const h2sTrigger=service!=='lean_amine'&&h2s>500;
+ const autoIgnitionTrigger=ait!==null&&tmax>ait;
+ const api682Trigger=d.get('api682')==='arr3';
+ const licensorTrigger=['sealless','arr3'].includes(d.get('licensor'));
+ const automaticChemical=['acid','caustic','hypo'].includes(service);
+ const consequence=['personnel','environment','fire'].includes(d.get('leak'));
+ const unknownHazard=d.get('projectClass')==='unknown'||d.get('toxicity')==='unknown'||d.get('leak')==='unknown'||d.get('api682')==='unknown'||d.get('licensor')==='unknown'||declaredFlam==='unknown'||revisionUncertain;
+ const confirmedHazard=d.get('projectClass')==='confirmed'||automaticChemical||aromaticTrigger||benzeneTrigger||h2sTrigger||autoIgnitionTrigger||api682Trigger||licensorTrigger||consequence;
+ let hazard=confirmedHazard?'confirmed':(d.get('projectClass')==='potential'||d.get('toxicity')==='toxic'||unknownHazard?'potential':'normal');
+ const verticalBlocked=has(d,'horizontalProhibited')||has(d,'spaceLimited');
+ const generalAsme=pd<=1900&&ps<=520&&tmin>=0&&tmax<=120&&vp<207&&power<=112;
+ const hydrocarbonAsme=pd<=1900&&ps<=520&&tmin>=0&&tmax<=65&&vp<172&&power<=112;
+ const apiRequired=has(d,'betweenBearing')||(service==='hydrocarbon'?!hydrocarbonAsme:!generalAsme);
+ let family='',type='',standard='',basis=[],checks=[],warnings=[];
+ if(revisionUncertain) warnings.push('The 12 January 2021 revision is not confirmed. Revalidate all limits against the project-controlled SAES-G-005 revision.');
+ if(declaredFlam==='nonflammable'&&derivedFlammable) warnings.push('The declared non-flammable status conflicts with the flash-point/temperature screening. Treat the liquid as flammable until Process/HSE confirms otherwise.');
+ // Hydraulic arrangement first: storm water is always vertical; oily-water self-priming is a dedicated exception.
+ if(service==='storm'){
+   family='Storm-water sump pump'; type='Vertical suspended, discharge-through-column pump, typically VS1 or VS2';
+   standard=power<225?'Vendor standard design meeting SAES-G-005 requirements':'API 610 / 31-SAMSS-004';
+   basis.push('The attached revision requires storm-water sump pumps to be vertically suspended discharge-through-column designs.');
+ } else if(service==='oily_sump'&&installation==='open_sump'){
+   const hydraulicRange=has(d,'selfPriming');
+   const horizontalAllowed=nonFlammable&&lift<=6&&hydraulicRange&&!verticalBlocked;
+   family='Oily-water open-sump pump';
+   if(horizontalAllowed){
+     type='Horizontal direct-drive self-priming centrifugal pump'; standard='Vendor standard design plus SAES-G-005 self-priming requirements';
+     basis.push('Oily-water open-sump service.','Liquid is non-flammable under the entered/derived classification.','Suction lift does not exceed 6 m.','Vendor flow, pressure and NPSH operating-range feasibility is confirmed.');
+     checks.push('Priming chamber shall be an integral one-piece part of the pump casing; do not use an external conversion tank/chamber.');
+     checks.push('Provide the required external-water priming system, solenoid valve and startup permissive.');
+     if(has(d,'pressurizedDischarge')) checks.push('Provide an automatic air-release valve or continuous bleed with orifice upstream of the discharge check valve.');
+     if(has(d,'extendedStandby')) checks.push('Provide continuous priming provisions so the suction chamber cannot lose priming fluid during extended standby.');
+     if(has(d,'frequentDuty')) checks.push('Provide the required operating-to-standby priming connection upstream of the check valves.');
+     if(!has(d,'integralChamber')) warnings.push('Integral one-piece priming chamber has not been confirmed.');
+     if(!has(d,'externalWaterPriming')) warnings.push('External-water priming permissive/solenoid arrangement has not been confirmed.');
+   } else {
+     type='Vertical suspended, discharge-through-column pump, VS1 or VS2'; standard='API 610 / 31-SAMSS-004';
+     if(flammable) basis.push('Flammable hydrocarbon/oily-water service excludes the horizontal self-priming branch.');
+     if(lift>6) basis.push('Suction lift exceeds 6 m.');
+     if(!hydraulicRange) basis.push('Flow, discharge pressure or NPSH is outside or not confirmed within the self-priming pump operating range.');
+     if(verticalBlocked) basis.push('Suction conditions or space prohibit horizontal installation.');
+     checks.push('Do not use VS4 or VS5 separate-discharge designs for hydrocarbon or oily-water open-sump service.');
+   }
+ } else if(service==='firewater'){
+   family='Main firewater pump'; type=verticalBlocked?'Vertical suspended firewater pump':'Horizontal firewater pump'; standard='NFPA 20 plus applicable project firewater requirements';
+ } else if(installation==='open_sump'){
+   family='Other open-sump service'; type=verticalBlocked?'Vertical suspended pump':'Service-specific pump arrangement requires project review'; standard=apiRequired?'API 610 / 31-SAMSS-004':'Project-approved vendor standard';
+   warnings.push('The attached horizontal self-priming mandate is specific to qualifying oily-water open-sump service; do not apply it automatically to every open sump.');
+ } else if(hazard==='confirmed'){
+   family='Appendix D highly hazardous liquid pump';
+   const seallessFeasible=power<=225&&solids<=0.25&&viscosity>=0.3&&viscosity<=200&&!(has(d,'magneticParticles')&&!has(d,'magneticControl'))&&!has(d,'crystallizing')&&!has(d,'poorLubricity');
+   if(seallessFeasible){type=verticalBlocked?'Vertical in-line sealless/canned-motor pump':'Horizontal sealless pump';standard=apiRequired?'API 685 / 31-SAMSS-685':'ASME B73.3 or ISO 15783';}
+   else {type='API process pump with dual pressurized seals, Arrangement 3';standard='API 610 / 31-SAMSS-004 plus API 682 / 31-SAMSS-012';warnings.push('Entered duty/fluid conditions do not support automatic preliminary sealless selection.');}
+ } else if(hazard==='potential'){
+   family='Potentially highly hazardous service'; type='Do not finalize sealed versus sealless containment'; standard='Apply Appendix A provisionally, then obtain Process/HSE/Materials/Pump Specialist confirmation';
+ } else if(apiRequired){
+   family='General process centrifugal pump'; type=verticalBlocked?'Vertical API process pump':has(d,'betweenBearing')?'Between-bearing API pump':'Horizontal API process pump'; standard='API 610 / 31-SAMSS-004';
+ } else {
+   family='General process centrifugal pump'; type=verticalBlocked?'Vertical in-line process pump':'Horizontal end-suction process pump'; standard=verticalBlocked?'ASME B73.2 or ISO 5199':'ASME B73.1 or ISO 2858 + ISO 5199';
+ }
+ // NPSH compliance checks from attached revision.
+ checks.push('Determine NPSHA at 120% of rated flow using minimum suction pressure, vapor pressure at maximum pumping temperature, and permanent-strainer pressure drop.');
+ if(npsha120!==null&&npsh3Rated!==null&&npsha120-npsh3Rated<1) warnings.push('Entered NPSH margin at rated flow is below 1 m.');
+ if(npsha120!==null&&npsh3120!==null&&npsh3120>npsha120) warnings.push('Vendor NPSH3 at 120% flow exceeds entered NPSHA at 120% flow.');
+ if(d.get('strainerIncluded')==='no'||d.get('strainerIncluded')==='unknown') warnings.push('Permanent-strainer pressure drop is not confirmed in the NPSHA calculation.');
+ checks.push('Confirm normal/rated duty relative to BEP, POR/AOR, minimum continuous stable flow, materials and sealing.');
+ if(has(d,'parallel')) checks.push('Verify matched parallel curves, shutoff heads and stable combined operation.');
+ return{hazard,family,type,standard,basis,checks,warnings,derivedFlammable,aromaticTrigger,benzeneTrigger,h2sTrigger,autoIgnitionTrigger,api682Trigger,licensorTrigger};
+}
+function render(r){const label=r.hazard==='confirmed'?'Appendix D screening: highly hazardous':r.hazard==='potential'?'Appendix D screening: specialist confirmation required':'Appendix D screening: no trigger entered';res.innerHTML=`<p class="kicker">Preliminary recommendation</p><div class="status ${r.hazard}">${escapeHTML(label)}</div><h2>${escapeHTML(r.family)}</h2><div class="decision">Recommended arrangement<strong>${escapeHTML(r.type)}</strong></div><div class="standard">Governing standard<br><strong>${escapeHTML(r.standard)}</strong></div><div class="result-section"><h3>Selection basis</h3><ul>${r.basis.map(x=>`<li>${escapeHTML(x)}</li>`).join('')||'<li>Normal Appendix A screening branch applied.</li>'}</ul></div><div class="result-section"><h3>Mandatory next checks</h3><ul>${r.checks.map(x=>`<li>${escapeHTML(x)}</li>`).join('')}</ul></div>${r.warnings.map(x=>`<div class="warning">${escapeHTML(x)}</div>`).join('')}<button type="button" class="print" onclick="window.print()">Print / Save report</button>`;ph.hidden=true;res.hidden=false;}
+form.addEventListener('submit',ev=>{ev.preventDefault();render(evaluate(new FormData(form)));res.scrollIntoView({behavior:'smooth',block:'start'})});
+form.addEventListener('reset',()=>setTimeout(()=>{res.hidden=true;ph.hidden=false},0));
+});
