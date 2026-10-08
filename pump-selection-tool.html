@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Preliminary Centrifugal Pump Selection Tool | The EPC Engineer</title>
+<meta name="description" content="Preliminary centrifugal pump type and governing standard selection based on SAES-G-005 Appendix A logic.">
+<link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/pump-selection-tool.css"></head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">EPC</span><span><strong>The EPC Engineer</strong><small>LEARN. GROW. SOLVE. SUCCEED.</small></span></a><button class="menu-btn" aria-expanded="false" aria-controls="main-nav">☰<span class="sr-only">Menu</span></button><nav id="main-nav" class="main-nav"><a class="nav-link" href="index.html">Home</a><a class="nav-link" href="knowledge-hub.html">Knowledge Hub</a><a class="nav-link active" href="engineering-tools.html">Engineering Tools</a><a class="nav-link" href="contact.html">Contact</a><a class="btn btn-primary nav-cta" href="booking.html">Book Consultation</a></nav></div></header>
+<main id="main"><section class="selector-hero"><div class="container"><a class="back-link" href="pumps-calculators.html">← Pump Calculators</a><p class="eyebrow light">Pump Selection Tool</p><h1>Preliminary Centrifugal Pump Selection</h1><p>Enter the service and operating limits. The tool recommends a preliminary pump family, orientation and governing standard using the decision criteria in Appendix A of SAES-G-005, with additional mandatory checks from the body of the standard.</p></div></section>
+<section class="section"><div class="container"><div class="scope-alert"><strong>Use limitation:</strong> This is a screening tool, not a final equipment selection. Confirm the latest approved project standard, process datasheet, system curve, NPSH, materials, seals, driver, testing and vendor capability before purchase.</div>
+<form id="selector-form" class="selector-layout">
+<div class="selector-inputs">
+<section class="input-card"><h2>1. Service classification</h2><div class="field-grid">
+<label>Service group<select name="service" required><option value="general">General process / other liquid</option><option value="hydrocarbon">Hydrocarbon</option><option value="storm">Storm water</option><option value="oily_sump">Oily water open sump</option><option value="cooling">Cooling or utility water</option><option value="firewater">Main firewater</option><option value="jockey">Firewater jockey</option><option value="sewage">Domestic sewage / community water</option><option value="sulfur">Molten sulfur</option><option value="lean_amine">Lean amine / DGA / ADIP</option><option value="rich_amine">Rich amine / DGA</option><option value="teg">TEG / glycol</option><option value="acid">Acid</option><option value="caustic">Caustic</option><option value="hypo">Sodium hypochlorite</option></select></label>
+<label>Installation<select name="installation"><option value="closed">Closed system / aboveground source</option><option value="open_sump">Open sump or pit</option><option value="tank">Tank transfer</option></select></label>
+<label>Hydrocarbon condition<select name="hydrocarbonCondition"><option value="na">Not applicable</option><option value="dry">Dry, water below 0.5 wt%</option><option value="wet">Wet, water at or above 0.5 wt%</option></select></label>
+<label>Hazard classification<select name="hazard"><option value="normal">Normal service</option><option value="flammable">Flammable hydrocarbon</option><option value="toxic">Toxic / hazardous</option><option value="highly">Highly hazardous per Appendix D</option></select></label>
+</div></section>
+<section class="input-card"><h2>2. Hydraulic and mechanical limits</h2><div class="field-grid">
+<label>Rated flow <span>(m³/h)</span><input name="flow" type="number" min="0" step="any" value="100" required></label>
+<label>Differential head <span>(m)</span><input name="head" type="number" min="0" step="any" value="50" required></label>
+<label>Rated suction pressure <span>kPa(g)</span><input name="suctionPressure" type="number" step="any" value="100"></label>
+<label>Rated discharge pressure <span>kPa(g)</span><input name="dischargePressure" type="number" step="any" value="800"></label>
+<label>Minimum liquid temperature <span>°C</span><input name="minTemp" type="number" step="any" value="10"></label>
+<label>Maximum liquid temperature <span>°C</span><input name="maxTemp" type="number" step="any" value="60"></label>
+<label>Vapor pressure at max temperature <span>kPa(a)</span><input name="vaporPressure" type="number" min="0" step="any" value="20"></label>
+<label>Estimated driver nameplate <span>kW</span><input name="power" type="number" min="0" step="any" value="45"></label>
+<label>Suction lift <span>m, open sump only</span><input name="suctionLift" type="number" min="0" step="any" value="0"></label>
+<label>Viscosity <span>cP</span><input name="viscosity" type="number" min="0" step="any" value="1"></label>
+<label>Suspended solids <span>wt%</span><input name="solids" type="number" min="0" step="any" value="0.03"></label>
+<label>H₂S concentration <span>ppm</span><input name="h2s" type="number" min="0" step="any" value="0"></label>
+</div></section>
+<section class="input-card"><h2>3. Configuration and feasibility</h2><div class="check-grid">
+<label><input name="horizontalProhibited" type="checkbox"> Suction conditions prohibit a horizontal pump</label>
+<label><input name="spaceLimited" type="checkbox"> Space does not permit horizontal installation</label>
+<label><input name="betweenBearing" type="checkbox"> Between-bearing single-stage or vertical-suspended type is preferred/required</label>
+<label><input name="autoIgnition" type="checkbox"> Liquid is at or above auto-ignition temperature</label>
+<label><input name="magneticParticles" type="checkbox"> Liquid contains magnetic particles</label>
+<label><input name="magneticFiltration" type="checkbox"> Magnetic filtration or non-synchronous drive is available</label>
+<label><input name="cleanFlush" type="checkbox"> External clean flush / duplex or self-cleaning filter is available</label>
+<label><input name="selfPrimingFeasible" type="checkbox" checked> A vendor confirms a self-priming pump can meet flow, head and NPSH</label>
+<label><input name="parallel" type="checkbox"> Pumps will operate in parallel</label>
+<label><input name="variableDuty" type="checkbox"> Flow and head vary significantly during normal operation</label>
+</div></section>
+<div class="form-actions"><button class="select-btn" type="submit">Generate Preliminary Selection</button><button class="reset-btn" type="reset">Reset</button></div>
+</div>
+<aside class="result-wrap"><div class="placeholder" id="placeholder"><span>✓</span><h2>Ready for selection</h2><p>Complete the service and operating data, then generate the recommendation.</p></div><div id="result" class="result-card" hidden aria-live="polite"></div></aside>
+</form></div></section></main>
+<footer class="site-footer"><div class="container footer-grid"><div><h2>The EPC Engineer</h2><p>Practical rotating-equipment knowledge and engineering tools.</p></div><div><h3>Explore</h3><a href="engineering-tools.html">Engineering Tools</a><a href="knowledge-hub.html">Knowledge Hub</a></div><div><h3>Work with Gupta</h3><a href="booking.html">Book Consultation</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom">© <span id="year"></span> Gupta Sahu. <a href="disclaimer.html">Disclaimer</a></div></footer>
+<script src="assets/js/main.js" defer></script><script src="assets/js/pump-selection-tool.js" defer></script></body></html>
