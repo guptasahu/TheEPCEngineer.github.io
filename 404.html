@@ -1,6 +1,238 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page Not Found | The EPC Engineer</title><meta name="description" content="The requested page could not be found."><meta name="keywords" content=""><meta name="author" content="Gupta Sahu"><meta name="theme-color" content="#0D3B66"><meta property="og:type" content="website"><meta property="og:title" content="Page Not Found | The EPC Engineer"><meta property="og:description" content="The requested page could not be found."><meta property="og:image" content="assets/images/logo.svg"><link rel="canonical" href="https://www.theepcengineer.com/404.html"><link rel="stylesheet" href="assets/css/style.css"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Gupta Sahu","jobTitle":"Rotating Equipment Engineer","url":"https://www.theepcengineer.com","brand":{"@type":"Brand","name":"The EPC Engineer"}}</script></head><body><a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><div class="container nav-wrap">
-<a class="brand" href="index.html" aria-label="The EPC Engineer home"><span class="brand-mark">EPC</span><span><strong>The EPC Engineer</strong><small>LEARN. GROW. SOLVE. SUCCEED.</small></span></a>
-<button class="menu-btn" aria-expanded="false" aria-controls="main-nav">☰<span class="sr-only">Menu</span></button>
-<nav id="main-nav" class="main-nav" aria-label="Primary navigation"><a class="nav-link " href="index.html">Home</a><a class="nav-link " href="about.html">About</a><a class="nav-link " href="services.html">Services</a><a class="nav-link " href="knowledge-hub.html">Knowledge Hub</a><a class="nav-link " href="resources.html">Free Resources</a><a class="nav-link " href="case-studies.html">Case Studies</a><a class="nav-link " href="testimonials.html">Testimonials</a><a class="nav-link " href="contact.html">Contact</a><a class="btn btn-primary nav-cta" href="booking.html">Book Consultation</a></nav>
-</div></header><main id="main"><section class="page-hero"><div class="container"><p class="eyebrow light">404</p><h1>Page not found</h1><p class="hero-text">The page may have moved or the link may be incorrect.</p><div class="button-row"><a class="btn btn-primary" href="index.html">Return Home</a></div></div></section></main><footer class="site-footer"><div class="container footer-grid"><div><h2>The EPC Engineer</h2><p>Practical rotating-equipment knowledge, technical consulting and career mentoring for engineers.</p><p class="social"><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a> · <a href="mailto:hello@theepcengineer.com">Email</a> · <a href="https://wa.me/" rel="noopener">WhatsApp</a></p></div><div><h3>Explore</h3><a href="knowledge-hub.html">Knowledge Hub</a><a href="resources.html">Free Resources</a><a href="case-studies.html">Case Studies</a></div><div><h3>Work with Gupta</h3><a href="booking.html">Book Consultation</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom">© <span id="year"></span> Gupta Sahu. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a></div></footer><script src="assets/js/main.js" defer></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Coming Soon | The EPC Engineer</title>
+  <meta name="description" content="This engineering resource is under preparation and will be available soon.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#0D3B66">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .coming-soon-hero {
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #082a49 0%, #0d3b66 55%, #1f6596 100%);
+      color: #ffffff;
+    }
+
+    .coming-soon-content {
+      max-width: 850px;
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+
+    .coming-soon-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 20px;
+      color: #f4a261;
+      font-size: 0.9rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .coming-soon-label::before {
+      content: "";
+      width: 32px;
+      height: 3px;
+      border-radius: 999px;
+      background: #f4a261;
+    }
+
+    .coming-soon-content h1 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(3rem, 7vw, 5.4rem);
+      line-height: 1.04;
+    }
+
+    .coming-soon-message {
+      max-width: 760px;
+      margin: 26px 0 0;
+      color: #d8e8f5;
+      font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+      line-height: 1.65;
+    }
+
+    .coming-soon-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .coming-soon-actions .btn-secondary-light {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 12px 22px;
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      border-radius: 11px;
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .coming-soon-actions .btn-secondary-light:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .progress-card {
+      margin-top: 38px;
+      max-width: 680px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .progress-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .progress-card p {
+      margin: 0;
+      color: #d8e8f5;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 760px) {
+      .coming-soon-hero {
+        min-height: 480px;
+      }
+
+      .coming-soon-content {
+        padding-top: 55px;
+        padding-bottom: 55px;
+      }
+
+      .coming-soon-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .coming-soon-actions a {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="The EPC Engineer home">
+        <span class="brand-mark">EPC</span>
+        <span>
+          <strong>The EPC Engineer</strong>
+          <small>LEARN. GROW. SOLVE. SUCCEED.</small>
+        </span>
+      </a>
+
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="main-nav">
+        ☰<span class="sr-only">Menu</span>
+      </button>
+
+      <nav id="main-nav" class="main-nav" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="knowledge-hub.html">Knowledge Hub</a>
+        <a class="nav-link" href="resources.html">Free Resources</a>
+        <a class="nav-link" href="engineering-tools.html">Engineering Tools</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="btn btn-primary nav-cta" href="booking.html">Book Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="coming-soon-hero">
+      <div class="container coming-soon-content">
+        <p class="coming-soon-label">Under Preparation</p>
+
+        <h1>Coming Soon</h1>
+
+        <p class="coming-soon-message">
+          This engineering page or calculator is currently under preparation.
+          The content is being reviewed and will be available soon.
+        </p>
+
+        <div class="coming-soon-actions">
+          <a class="btn btn-primary" href="engineering-tools.html">
+            Explore Engineering Tools
+          </a>
+
+          <a class="btn-secondary-light" href="knowledge-hub.html">
+            Visit Knowledge Hub
+          </a>
+
+          <a class="btn-secondary-light" href="index.html">
+            Return Home
+          </a>
+        </div>
+
+        <div class="progress-card">
+          <strong>What you can do now</strong>
+          <p>
+            Explore the available pump, piping, compressor, chemical injection,
+            tank, heat-transfer, instrumentation and unit-conversion tools.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h2>The EPC Engineer</h2>
+        <p>
+          Practical rotating-equipment knowledge, engineering calculators,
+          technical consulting and career mentoring for engineers.
+        </p>
+        <p class="social">
+          <a href="https://www.linkedin.com/in/gupta-sahu" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+          <a href="mailto:theepcengineer@gmail.com">Email</a>
+        </p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <a href="knowledge-hub.html">Knowledge Hub</a>
+        <a href="resources.html">Free Resources</a>
+        <a href="engineering-tools.html">Engineering Tools</a>
+      </div>
+
+      <div>
+        <h3>Work with Gupta</h3>
+        <a href="booking.html">Book Consultation</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> Gupta Sahu.
+      <a href="privacy.html">Privacy</a> ·
+      <a href="terms.html">Terms</a> ·
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
