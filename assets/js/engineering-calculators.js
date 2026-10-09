@@ -44,7 +44,31 @@ main.addEventListener('submit',e=>{e.preventDefault();const form=e.target,res=fo
 main.addEventListener('reset',e=>{setTimeout(()=>{e.target.querySelector('.calc-result').classList.remove('show');e.target.querySelector('.calc-error').classList.remove('show')},0)});
 
 const pageTabs=document.querySelectorAll('[data-page-tab]');
-pageTabs.forEach(btn=>btn.addEventListener('click',()=>{const target=btn.dataset.pageTab;pageTabs.forEach(x=>x.classList.toggle('active',x===btn));document.querySelectorAll('[data-tab-panel]').forEach(p=>p.hidden=p.dataset.tabPanel!==target)}));
-
-const hash=location.hash.slice(1);if(hash&&document.getElementById(hash)){nav.querySelector(`[data-target="${hash}"]`)?.click()}
+function showPageTab(target){
+  pageTabs.forEach(btn=>btn.classList.toggle('active',btn.dataset.pageTab===target));
+  document.querySelectorAll('[data-tab-panel]').forEach(panel=>{panel.hidden=panel.dataset.tabPanel!==target});
+}
+function openCalculator(calculatorId,updateHistory=true){
+  const button=nav.querySelector(`[data-target="${calculatorId}"]`);
+  const panel=document.getElementById(calculatorId);
+  if(!button||!panel)return false;
+  showPageTab('calculators');
+  nav.querySelectorAll('button').forEach(item=>item.classList.toggle('active',item===button));
+  main.querySelectorAll('.calc-panel').forEach(item=>item.classList.toggle('active',item.id===calculatorId));
+  if(updateHistory)history.replaceState(null,'',`#${calculatorId}`);
+  requestAnimationFrame(()=>panel.scrollIntoView({behavior:'smooth',block:'start'}));
+  return true;
+}
+pageTabs.forEach(btn=>btn.addEventListener('click',()=>showPageTab(btn.dataset.pageTab)));
+document.addEventListener('click',event=>{
+  const link=event.target.closest('[data-tab-panel="steps"] a[href^="#"]');
+  if(!link)return;
+  const calculatorId=decodeURIComponent(link.getAttribute('href').slice(1));
+  if(openCalculator(calculatorId,true))event.preventDefault();
+});
+window.addEventListener('hashchange',()=>{
+  const calculatorId=location.hash.slice(1);
+  if(calculatorId)openCalculator(calculatorId,false);
+});
+const hash=location.hash.slice(1);if(hash)openCalculator(hash,false);
 })();
